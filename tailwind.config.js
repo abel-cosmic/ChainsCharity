@@ -22,7 +22,11 @@ export default {
         neutral:"#ffffff",
         hint:"#6B6B6B",
         lightHint:"#D6D6D6"
-      }
+      },
+      boxShadow: {
+        blue: '0 10px 40px 0 rgba(13, 130, 190, 0.1)',
+        black: '0 10px 40px 0 rgba(46, 46, 46, 0.1)',
+      },
     },
   },
   plugins: [],
