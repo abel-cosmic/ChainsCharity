@@ -1,3 +1,11 @@
+import OurAim from "./home/OurAim";
+import Services from "./home/Services";
+
 export default function Home() {
-  return <div className="font-bold">Home</div>;
+  return (
+    <>
+      <OurAim />
+      <Services/>
+    </>
+  );
 }
