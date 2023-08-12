@@ -1,75 +1,72 @@
-import { useState, useEffect } from "react";
-import CardTestimonial from "./CardTestimonial";
+import React, { useState } from "react";
+import SliderButton from "./SliderButton";
+import right_arrow from "./../images/icons/Frame 35 (1).png";
+import left_arrow from "./../images/icons/Frame 35.png";
 
-const ImageSlider = ({ sliders }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  let interval;
+const ImageSlider = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % sliders.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? sliders.length - 1 : prevSlide - 1
+  const handlePrevClick = () => {
+    setCurrentImageIndex(
+      (currentImageIndex - 1 + images.length) % images.length
     );
   };
 
-  const startAutoSlide = () => {
-    interval = setInterval(nextSlide, 5000);
+  const handleNextClick = () => {
+    setCurrentImageIndex((currentImageIndex + 1) % images.length);
   };
-
-  const stopAutoSlide = () => {
-    clearInterval(interval);
-  };
-
-  useEffect(() => {
-    startAutoSlide();
-
-    return () => {
-      stopAutoSlide();
-    };
-  }, [currentSlide]);
 
   return (
-    <div className="relative overflow-hidden">
-      <div
-        className="flex flex-row transition-transform duration-500 transform"
-        style={{ transform: `translateX(${currentSlide * -100}%)` }}
-        onMouseEnter={stopAutoSlide}
-        onMouseLeave={startAutoSlide}
-      >
-        {sliders.map((slide, index) => (
-          <div key={index} className="w-full min-w-full">
-            {index === currentSlide && (
-              <CardTestimonial
-                image={slide.image}
-                name={slide.name}
-                title={slide.title}
-                description={slide.description}
+    <div className="w-full flex flex-col items-center relative overflow-hidden">
+      <div className="flex flex-row w-full relative overflow-hidden items-center justify-center">
+        <div className="flex items-center justify-between absolute top-1/2 transform -translate-y-1/2 w-full z-50">
+          <SliderButton
+            path={handlePrevClick}
+            img={left_arrow}
+            position={"left-20"}
+          />
+          <SliderButton
+            path={handleNextClick}
+            img={right_arrow}
+            position={"right-20"}
+          />
+        </div>
+        <div
+          className="flex flex-row h-full transition-transform duration-300"
+          style={{
+            transform: `translateX(calc(-${
+              currentImageIndex * (100 / images.length)
+            }%))`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="w-full h-full flex-shrink-0 flex items-center justify-center"
+              style={{
+                width: `${100 / 3}%`, // Divide by 3 to show three images
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={image}
+                alt={`Image ${index}`}
+                className="w-full h-full object-cover"
               />
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="flex items-center justify-center mt-4">
-        {sliders.map((_, index) => (
+        {images.map((_, index) => (
           <div
             key={index}
             className={`h-4 w-4 rounded-full ${
-              index === currentSlide ? "bg-primary" : "bg-gray-500"
+              index === currentImageIndex ? "bg-primary" : "bg-gray-500"
             } mx-1 cursor-pointer`}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => setCurrentImageIndex(index)}
           />
         ))}
-      </div>
-      <div className="flex items-center justify-center mt-4">
-        <button className="mr-2" onClick={prevSlide}>
-          Previous
-        </button>
-        <button className="ml-2" onClick={nextSlide}>
-          Next
-        </button>
       </div>
     </div>
   );

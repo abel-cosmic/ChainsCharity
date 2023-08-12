@@ -1,6 +1,5 @@
 import CardTestimonial from "../../assets/components/CardTestimonial";
-import ImageSlider from "../../assets/components/ImageSlider";
-import bg from "./../../assets/images/persons/testimonials-bg.png";
+import SingleImageSlider from "../../assets/components/SingleImageSlider";
 import profile from "./../../assets/images/persons/profile (1).png";
 const slides = [
   {
@@ -43,7 +42,11 @@ const slides = [
 const Testimonial = () => {
   return (
     <div className="cover-image flex flex-row items-center justify-center">
-      <ImageSlider sliders={slides} />
+      <SingleImageSlider
+        sliders={slides}
+        sliderButtons={"none"}
+        Component={CardTestimonial}
+      />
     </div>
   );
 };

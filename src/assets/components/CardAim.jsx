@@ -3,7 +3,7 @@ const CardAim = ({img1, img2, heading, description}) => {
   const [isHovered, setHovered] = useState(false);
   return (
     <div
-      className="hover:bg-primary shadow-cust rounded-xl flex flex-col items-center w-96 px-10 py-20 gap-6  hover:text-white"
+      className="hover:bg-primary  shadow-cust rounded-xl flex flex-col items-center w-96 px-10 py-20 gap-6  hover:text-white"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
