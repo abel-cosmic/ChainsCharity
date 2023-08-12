@@ -1,4 +1,5 @@
 import About from "./home/About";
+import Contacts from "./home/Contact";
 import EventsPage from "./home/EventsPage";
 import OurAim from "./home/OurAim";
 import Services from "./home/Services";
@@ -11,7 +12,8 @@ export default function Home() {
       <About />
       <Services />
       <Testimonial />
-      <EventsPage />
+      <EventsPage />\
+      <Contacts />
     </>
   );
 }
