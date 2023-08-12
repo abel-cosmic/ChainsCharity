@@ -103,7 +103,7 @@ const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
               key={index}
               className={`h-4 w-4 rounded-full ${
                 index === currentSlide ? "bg-primary" : "bg-gray-500"
-              } mx-1 cursor-pointer`}
+              } mx-2 cursor-pointer`}
               onClick={() => setCurrentSlide(index)}
             />
           ))}

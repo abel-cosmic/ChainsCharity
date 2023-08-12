@@ -63,7 +63,7 @@ const ImageSlider = ({ images }) => {
             key={index}
             className={`h-4 w-4 rounded-full ${
               index === currentImageIndex ? "bg-primary" : "bg-gray-500"
-            } mx-1 cursor-pointer`}
+            } mx-2 cursor-pointer`}
             onClick={() => setCurrentImageIndex(index)}
           />
         ))}

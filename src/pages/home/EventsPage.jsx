@@ -8,7 +8,7 @@ const images = [slide2, slide3, slide4, slide2, slide3, slide4];
 
 const EventsPage = () => {
   return (
-    <div className="flex flex-col items-center py-44 gap-10">
+    <div className="flex flex-col items-center py-10 gap-10">
       <div className="flex flex-col  w-[40rem] items-center justify-center gap-6">
         <PlaceHolder text="EVENTS" />
         <h1 className="font-bold text-3xl">
