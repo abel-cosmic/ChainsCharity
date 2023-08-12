@@ -12,3 +12,7 @@
 *{
     font-family: "Manrope";
 }
+.cover-image{
+    background-image: url('src/assets/images/persons/testimonials-bg.png');
+    height: 35rem;
+}

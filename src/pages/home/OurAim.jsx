@@ -36,7 +36,7 @@ export default function OurAim() {
   return (
     <div className="flex flex-col items-center justify-center gap-20 py-10">
       <PlaceHolder text="OUR AIM" />
-      <div className="flex flex-row gap-10">
+      <div className="flex flex-row flex-wrap items-center gap-10 justify-center">
         {console.log(card_aim)}
         {card_aim.map((card) => (
           <CardAim

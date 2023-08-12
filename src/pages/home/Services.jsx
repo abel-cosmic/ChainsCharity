@@ -48,9 +48,9 @@ export default function Services() {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-10 py-10 px-4">
+    <div className="flex flex-col items-center gap-10 py-10 px-4 justify-center">
       <PlaceHolder text="SERVICES" />
-      <div className="flex flex-row flex-wrap  gap-5 items-center">
+      <div className="flex flex-row flex-wrap gap-5 items-center justify-center">
         {services.map((service) => (
           <CardServices
             key={service.id}
