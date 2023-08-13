@@ -51,11 +51,9 @@ const CardForm = () => {
       className="w-1/2 shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-5 max-lg:text-sm"
     >
       <div className="flex flex-row gap-12 w-full max-md:flex-col max-lg:gap-4 ">
-        <div className="flex flex-col w-full">
+        <div className="relative w-full">
           {formik.touched.name && formik.errors.name ? (
-            <div className="self-start text-[#f00] text-[10px]">
-              {formik.errors.name}
-            </div>
+            <div className="validate">{formik.errors.name}</div>
           ) : null}
           <input
             type="text"
@@ -68,11 +66,9 @@ const CardForm = () => {
             className="w-full pl-6 py-2 max-lg:pl-4 border-black  border-[0.8px] rounded focus:border-[#0D82BE]"
           />
         </div>
-        <div className="w-full">
+        <div className="relative w-full">
           {formik.touched.email && formik.errors.email ? (
-            <div className="self-start text-[#f00] text-[10px]">
-              {formik.errors.email}
-            </div>
+            <div className="validate">{formik.errors.email}</div>
           ) : null}
           <input
             type="email"
@@ -87,11 +83,9 @@ const CardForm = () => {
         </div>
       </div>
       <div className="flex flex-col gap-10  max-lg:gap-4 w-full">
-        <div className="w-full">
+        <div className="relative w-full">
           {formik.touched.subject && formik.errors.subject ? (
-            <div className="self-start text-[#f00] text-[10px]">
-              {formik.errors.subject}
-            </div>
+            <div className="validate">{formik.errors.subject}</div>
           ) : null}
           <input
             type="text"
@@ -104,25 +98,23 @@ const CardForm = () => {
             className="w-full pl-6  py-2 max-lg:pl-4 border-black  border-[0.8px] rounded focus:border-[#0D82BE]"
           />
         </div>
-        <div className="w-full">
+        <div className="relative w-full">
           {formik.touched.message && formik.errors.message ? (
-            <div className="self-start text-[#f00] text-[10px]">
+            <div className=" self-start text-[#f00] text-[10px] absolute  left-0 bottom-[16rem] ">
               {formik.errors.message}
             </div>
           ) : null}
-          <div>
-            <textarea
-              type="text"
-              placeholder="Message"
-              name="message"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.message}
-              id="message"
-              className="w-full pl-6 pt-2 pb-[12rem]  max-lg:pl-4  border-black  border-[0.8px] rounded focus:border-[#0D82BE]"
-            />
-            {formattedMessage}
-          </div>
+          <textarea
+            type="text"
+            placeholder="Message"
+            name="message"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.message}
+            id="message"
+            className="w-full pl-6 pt-2 pb-[12rem]  max-lg:pl-4  border-black  border-[0.8px] rounded focus:border-[#0D82BE]"
+          />
+          {formattedMessage}
         </div>
       </div>
       <input

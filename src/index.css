@@ -21,3 +21,8 @@
     height: 20rem; /* Adjust the height value as per your requirement */
   }
 }
+
+.validate{
+  @apply self-start text-[#f00] text-[10px] absolute  left-0 bottom-10 ;
+
+}
