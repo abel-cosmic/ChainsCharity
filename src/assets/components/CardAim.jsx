@@ -14,13 +14,23 @@ const CardAim = ({ img1, img2, heading, description }) => {
        px-10 max-md:mx-6
        py-20 
        gap-6 max-md:gap-4
-     hover:text-white"
+     hover:text-white
+    cursor-pointer
+     "
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <img src={isHovered ? img1 : img2} alt="image" className="w-20 max-md:w-12" />
-      <h1 className="text-xl font-bold font-Manrope max-md:text-center max-md:text-lg">{heading}</h1>
-      <p className="font-semibold max-md:text-center max-md:text-sm">{description}</p>
+      <img
+        src={isHovered ? img1 : img2}
+        alt="image"
+        className="w-20 max-md:w-12"
+      />
+      <h1 className="text-xl font-bold font-Manrope max-md:text-center max-md:text-lg">
+        {heading}
+      </h1>
+      <p className="font-semibold max-md:text-center max-md:text-sm">
+        {description}
+      </p>
     </div>
   );
 };

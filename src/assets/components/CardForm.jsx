@@ -26,7 +26,7 @@ const CardForm = () => {
       action=""
       className="w-1/2 shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-5 max-lg:text-sm"
     >
-      <div className="flex flex-row gap-20 w-full max-md:flex-col max-lg:gap-4 ">
+      <div className="flex flex-row gap-12 w-full max-md:flex-col max-lg:gap-4 ">
         <input
           type="text"
           placeholder="Your Name"
@@ -72,7 +72,7 @@ const CardForm = () => {
       <input
         type="submit"
         value="Send Message"
-        className="bg-primary bg-opacity-90 text-white px-10 py-2 rounded hover:bg-opacity-100 self-start max-lg:text-sm"
+        className="bg-primary cursor-pointer bg-opacity-90 text-white px-10 py-2 rounded hover:bg-opacity-100 max-md:self-start max-lg:text-sm"
       />
     </form>
   );

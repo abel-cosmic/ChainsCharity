@@ -22,7 +22,7 @@ const TopNavBar = () => {
       <div className="flex gap-10">
         <a href="#">
           <img
-          className="w-[1.5rem]"
+            className="w-[1.5rem]"
             src="src/assets/images/social medias/twitter.svg"
             alt="twitter-icon"
           />
