@@ -34,10 +34,9 @@ export default function OurAim() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center gap-20 py-10">
+    <div className="flex flex-col items-center justify-center gap-20 py-10 max-md:gap-10 max-md:py-4">
       <PlaceHolder text="OUR AIM" />
       <div className="flex flex-row flex-wrap items-center gap-10 justify-center">
-        {console.log(card_aim)}
         {card_aim.map((card) => (
           <CardAim
             img1={card.img1}

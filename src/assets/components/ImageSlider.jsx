@@ -17,18 +17,18 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center relative overflow-hidden">
+    <div className="w-full flex flex-col items-center relative overflow-hidden ">
       <div className="flex flex-row w-full relative overflow-hidden items-center justify-center">
         <div className="flex items-center justify-between absolute top-1/2 transform -translate-y-1/2 w-full z-50">
           <SliderButton
             path={handlePrevClick}
             img={left_arrow}
-            position={"left-20"}
+            position={"left-20 max-md:left-5"}
           />
           <SliderButton
             path={handleNextClick}
             img={right_arrow}
-            position={"right-20"}
+            position={"right-20 max-md:right-5"}
           />
         </div>
         <div
@@ -51,7 +51,7 @@ const ImageSlider = ({ images }) => {
               <img
                 src={image}
                 alt={`Image ${index}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover max-md:h-44 "
               />
             </div>
           ))}
@@ -61,7 +61,7 @@ const ImageSlider = ({ images }) => {
         {images.map((_, index) => (
           <div
             key={index}
-            className={`h-4 w-4 rounded-full ${
+            className={`h-4 w-4 max-lg:w-2 max-lg:h-2 max-lg:mx-1 rounded-full ${
               index === currentImageIndex ? "bg-primary" : "bg-gray-500"
             } mx-2 cursor-pointer`}
             onClick={() => setCurrentImageIndex(index)}
