@@ -16,3 +16,39 @@
     background-image: url('src/assets/images/persons/testimonials-bg.png');
     height: 35rem;
 }
+.toggle-button {
+    -webkit-appearance: none;
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 25px;
+    @apply bg-hint;
+    /* transitionbackground: .3s;    */
+    outline: none;
+    cursor: pointer;
+}
+
+.toggle-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.45rem;
+    width: 1.45rem;
+    background-color: white;
+    transition: left .3s;
+}
+
+.toggle-button:checked {
+    @apply bg-primary;
+}
+
+.toggle-button:checked::after {
+left: 70%;
+}
+
+.movetoggle {
+   float: right;
+}
