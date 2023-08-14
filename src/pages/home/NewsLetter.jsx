@@ -5,12 +5,19 @@ const NewsLetter = () => {
       <p className="font-semibold text-base max-lg:text-sm text-center">
         Tamen quem nulla quae legam multos aute sint culpa legam noster magna
       </p>
-      <div className="flex flex-row gap-0 shadow-cust ">
-        <input type="text" className="w-[38rem] h-[2.5rem] max-md:w-[15rem] " />
-        <button className="bg-primary flex flex-row items center  justify-center bg-opacity-90 hover:bg-opacity-100 cursor-pointer text-white py-2 px-10 max-md:text-sm">
-          Subscribe
-        </button>
-      </div>
+      <form className="flex flex-row gap-0 shadow-cust ">
+          <input
+            type="text"
+            required
+            className="w-[38rem] h-[2.5rem] max-md:w-[15rem] "
+          />
+          <button
+            type="submit"
+            className="bg-primary flex flex-row items center  justify-center bg-opacity-90 hover:bg-opacity-100 cursor-pointer text-white py-2 px-10 max-md:text-sm"
+          >
+            Subscribe
+          </button>
+        </form>
     </div>
   );
 };

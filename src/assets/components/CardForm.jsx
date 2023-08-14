@@ -37,18 +37,13 @@ const CardForm = () => {
 
   const [message, setMessage] = useState("");
 
-  const handleMessageChange = (event) => {
-    const { value } = event.target;
-    setMessage(value);
-  };
-
   const formattedMessage = message
     .split("\n")
     .map((text, index) => <p key={index}>{text}</p>);
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="w-1/2 shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-5 max-lg:text-sm"
+      className="w-1/2 shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-8 max-lg:text-sm"
     >
       <div className="flex flex-row gap-12 w-full max-md:flex-col max-lg:gap-4 ">
         <div className="relative w-full">
@@ -82,7 +77,7 @@ const CardForm = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-10  max-lg:gap-4 w-full">
+      <div className="flex flex-col gap-10  max-lg:gap-8 w-full">
         <div className="relative w-full">
           {formik.touched.subject && formik.errors.subject ? (
             <div className="validate">{formik.errors.subject}</div>
@@ -100,7 +95,7 @@ const CardForm = () => {
         </div>
         <div className="relative w-full">
           {formik.touched.message && formik.errors.message ? (
-            <div className=" self-start text-[#f00] text-[10px] absolute  left-0 bottom-[16rem] ">
+            <div className=" self-start text-[#f00] text-[10px] absolute  left-0 lg:bottom-[16.5rem] max-lg:bottom-[16rem] font-semibold  ">
               {formik.errors.message}
             </div>
           ) : null}

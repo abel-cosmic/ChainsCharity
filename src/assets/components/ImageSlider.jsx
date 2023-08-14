@@ -44,7 +44,7 @@ const ImageSlider = ({ images }) => {
               key={index}
               className="w-full h-full flex-shrink-0 flex items-center justify-center"
               style={{
-                width: `${100 / 3}%`, // Divide by 3 to show three images
+                width: `${100 / 3}%`,
                 overflow: "hidden",
               }}
             >

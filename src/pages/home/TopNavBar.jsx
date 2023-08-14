@@ -1,7 +1,7 @@
 const TopNavBar = () => {
   return (
-    <div className="flex justify-around align-middle bg-primary text-white font-semibold p-5">
-      <div className="flex gap-5">
+    <div className="flex justify-around  align-middle bg-primary text-white font-semibold p-5">
+      <div className="flex flex-row w-[25rem] justify-between items-center">
         <div className="flex gap-3">
           <img
             src="src/assets/images/icons/phone.svg"
