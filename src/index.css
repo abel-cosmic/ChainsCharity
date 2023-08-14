@@ -30,6 +30,8 @@
     background-image: url('src/assets/images/persons/testimonials-bg.png');
     height: 35rem;
 }
+
+/* toggle button */
 .toggle-button {
     -webkit-appearance: none;
     position: relative;
@@ -62,7 +64,13 @@
 .toggle-button:checked::after {
 left: 70%;
 }
-
 .movetoggle {
    float: right;
+}
+/* banner image */
+
+.banner{
+  background-image: url('src/assets/images/banner.png');
+  width: 100%;
+  background-size: cover;
 }

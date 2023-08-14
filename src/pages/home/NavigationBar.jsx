@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
-    <nav className="flex justify-between border-solid border-primary border-b pl-20 pr-32 sticky top-0 bg-white z-10">
+    <nav className="flex justify-between border-solid border-primary border-b pl-20 pr-32 sticky top-0 bg-white z-[100]">
       <img
         className="w-[10rem]"
         src="src/assets/images/Logo.png"
