@@ -1,4 +1,5 @@
 import About from "./home/About";
+import Banner from "./home/Banner";
 import Contacts from "./home/Contact";
 import EventsPage from "./home/EventsPage";
 import NavigationBar from "./home/NavigationBar";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <TopNavBar/>
       <NavigationBar/>
+      <Banner/>
       <OurAim />
       <About />
       <Services />
