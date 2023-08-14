@@ -23,7 +23,7 @@
 }
 
 .validate{
-  @apply self-start text-[#f00] text-[10px] absolute  left-0 bottom-10 ;
+  @apply self-start text-[#f00] text-[10px] font-semibold absolute   left-0 lg:bottom-12  max-lg:bottom-10;
 
 }
 .cover-image{

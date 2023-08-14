@@ -10,13 +10,13 @@ const info = [
   },
   {
     icon: location,
-    title: "Our Address",
-    sub: "A108 Adam Street, New York, NY 535022",
+    title: "Email Us",
+    sub: "Contact@example.com",
   },
   {
     icon: location,
-    title: "Our Address",
-    sub: "A108 Adam Street, New York, NY 535022",
+    title: "Call Us",
+    sub: "+1 5589 55488 55",
   },
 ];
 const Contacts = () => {
