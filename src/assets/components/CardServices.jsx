@@ -4,7 +4,7 @@ const CardServices = ({ image, heading, description }) => {
   const [isHovered, setHovered] = useState(false);
   return (
     <div
-      className="border-[0.1rem] border-primary border-solid flex flex-col items-center px-28 w-[34rem] py-16 max-md:py-8 max-md:px-14 rounded gap-4 max-md:gap-2 hover:shadow-blue max-md:flex max-md:flex-col max-md:w-full cursor-pointer"
+      className="transition-all border-[0.1rem] border-primary border-solid flex flex-col items-center px-28 w-[34rem] py-16 max-md:py-8 max-md:px-14 rounded gap-4 max-md:gap-2 hover:shadow-blue max-md:flex max-md:flex-col max-md:w-full cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
