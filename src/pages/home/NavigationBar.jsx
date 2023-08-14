@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FormGroup, FormControlLabel, Switch } from "@mui/material";
 
 const NavigationBar = () => {
   return (

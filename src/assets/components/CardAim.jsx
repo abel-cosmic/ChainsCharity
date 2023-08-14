@@ -16,6 +16,8 @@ const CardAim = ({ img1, img2, heading, description }) => {
        gap-6 max-md:gap-4
      hover:text-white
     cursor-pointer
+    transition-all
+    h-full
      "
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
