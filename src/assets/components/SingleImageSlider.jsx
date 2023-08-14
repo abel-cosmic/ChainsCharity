@@ -70,18 +70,18 @@ const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
 
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative overflow-hidden  max-md:flex max-md:flex-col max-md:w-full"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
       <div
         ref={sliderRef}
-        className="flex flex-row transition-transform duration-[0.5s] transform"
+        className="flex flex-row transition-transform duration-[0.8s] transform"
         style={{ transform: `translateX(${currentSlide * -100}%)` }}
       >
         {sliders.map((slide, index) => (
-          <div key={index} className="w-full min-w-full">
+          <div key={index} className="w-full min-w-full max-md:flex">
             {index === currentSlide && <Component {...slide} />}
           </div>
         ))}
@@ -101,7 +101,7 @@ const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
           {sliders.map((_, index) => (
             <div
               key={index}
-              className={`h-4 w-4 rounded-full ${
+              className={`h-4 w-4 max-lg:w-2 max-lg:h-2 max-lg:mx-1 rounded-full ${
                 index === currentSlide ? "bg-primary" : "bg-gray-500"
               } mx-2 cursor-pointer`}
               onClick={() => setCurrentSlide(index)}

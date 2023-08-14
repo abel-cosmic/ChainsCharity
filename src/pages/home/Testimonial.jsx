@@ -41,7 +41,7 @@ const slides = [
 
 const Testimonial = () => {
   return (
-    <div className="cover-image flex flex-row items-center justify-center">
+    <div className="cover-image flex flex-row items-center justify-center py-20">
       <SingleImageSlider
         sliders={slides}
         sliderButtons={"none"}

@@ -8,13 +8,13 @@ const images = [slide2, slide3, slide4, slide2, slide3, slide4];
 
 const EventsPage = () => {
   return (
-    <div className="flex flex-col items-center py-10 gap-10">
-      <div className="flex flex-col  w-[40rem] items-center justify-center gap-6">
+    <div className="flex flex-col items-center py-10 gap-10 max-md:gap-6">
+      <div className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:gap-2 max-md:w-full">
         <PlaceHolder text="EVENTS" />
-        <h1 className="font-bold text-3xl">
+        <h1 className="font-bold text-3xl max-md:text-xl">
           Check our <span className="text-primary">Events</span>
         </h1>
-        <p className="font-medium text-center">
+        <p className="font-medium text-center max-md:flex max-md:flex-col max-md:w-full max-md:text-sm">
           “Changing Lives Through Soap Recycling. Our goal: minimize waste,
           boost hygiene by repurposing discarded soaps. Donated 350+ soaps,
           empowering underserved communities for cleanliness and health. Join

@@ -8,9 +8,23 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+* {
+  font-family: "Manrope";
+}
+.cover-image {
+  background-image: url("src/assets/images/persons/testimonials-bg.png");
+  height: 35rem;
+}
 
-*{
-    font-family: "Manrope";
+@media screen and (max-width: 768px) {
+  .cover-image {
+    height: 20rem; /* Adjust the height value as per your requirement */
+  }
+}
+
+.validate{
+  @apply self-start text-[#f00] text-[10px] absolute  left-0 bottom-10 ;
+
 }
 .cover-image{
     background-image: url('src/assets/images/persons/testimonials-bg.png');
