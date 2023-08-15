@@ -5,6 +5,7 @@ import EventsPage from "./home/EventsPage";
 import NavigationBar from "./home/NavigationBar";
 import NewsLetter from "./home/NewsLetter";
 import OurAim from "./home/OurAim";
+import OverViews from "./home/OverViews";
 import Services from "./home/Services";
 import Testimonial from "./home/Testimonial";
 import TopNavBar from "./home/TopNavBar";
@@ -17,6 +18,7 @@ export default function Home() {
       <Banner/>
       <OurAim />
       <About />
+      <OverViews/>
       <Services />
       <Testimonial />
       <EventsPage />\
