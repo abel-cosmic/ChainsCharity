@@ -7,6 +7,7 @@ import NewsLetter from "./home/NewsLetter";
 import OurAim from "./home/OurAim";
 import OverViews from "./home/OverViews";
 import Services from "./home/Services";
+import Team from "./home/Team";
 import Testimonial from "./home/Testimonial";
 import TopNavBar from "./home/TopNavBar";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Services />
       <Testimonial />
       <EventsPage />\
+      <Team/>
       <Contacts />
       <NewsLetter/>
     </>
