@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <TopNavBar/>
-      {/* <NavigationBar/> */}
+      <NavigationBar/>
       <Banner/>
       <OurAim />
       {/* <About /> */}

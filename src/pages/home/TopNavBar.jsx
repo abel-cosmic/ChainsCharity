@@ -2,15 +2,15 @@ const TopNavBar = () => {
   return (
     <div className="flex justify-around  align-middle bg-primary text-white font-semibold p-5">
       <div className="flex flex-row justify-between items-center text-xs w-[20rem] lg:w-[25rem] ">
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
           <img
             src="src/assets/images/icons/phone.svg"
             alt="phone-icon"
-            className="w-[0.75rem] md:w-[1rem]"
+            className="w-[0.65rem] md:w-[1rem]"
           />
           <p>+2519 999 999 999</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
           <img
             src="src/assets/images/icons/mail.svg"
             alt="phone-icon"
