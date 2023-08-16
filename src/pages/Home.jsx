@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <>
       <TopNavBar/>
-      <NavigationBar/>
+      {/* <NavigationBar/> */}
       <Banner/>
       <OurAim />
-      <About />
+      {/* <About /> */}
       <OverViews/>
       <Services />
       <Testimonial />
-      <EventsPage />\
+      <EventsPage />
       <Team/>
       <Contacts />
       <NewsLetter/>

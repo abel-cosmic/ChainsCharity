@@ -61,17 +61,17 @@ const Team = () => {
   ];
 
   return (
-    <div className="bg-primary bg-opacity-5 flex flex-col items-center gap-5 pt-10 pb-24 px-20">
+    <div className="bg-primary bg-opacity-5 flex flex-col items-center gap-5 pt-10 pb-10 md:pb-24 px-20">
       <PlaceHolder text="TEAM" />
-      <h1 className="font-bold text-3xl max-md:text-xl">
+      <h1 className="font-bold text-3xl max-md:text-lg">
         Our Hardworking <span className="text-primary">Team</span>
       </h1>
-      <blockquote className="w-[40rem] text-center text-l font-semibold">
+      <blockquote className="w-full lg:w-[40rem] text-center lg:text-l font-semibold">
         "At Chains Charity, our team is made up of passionate and dedicated
         individuals who are committed to breaking the cycle of poverty and
         making a positive impact in our community."
       </blockquote>
-      <div className="flex justify-center gap-10 flex-wrap mt-10">
+      <div className="flex justify-center gap-5 lg:gap-10 flex-wrap mt-10">
         {people.map((person) => (
           <Profile profile={person} />
         ))}

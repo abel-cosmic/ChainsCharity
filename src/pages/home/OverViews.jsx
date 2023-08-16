@@ -32,7 +32,7 @@ const OverViews = () => {
     },
   ];
   return (
-    <div className="flex gap-5 p-10">
+    <div className="flex flex-col items-center md:flex-row md:flex-wrap justify-center lg:flex-nowrap gap-5 p-10">
       {statistics.map((data) => (
         <StatisticsCard stat={data} />
       ))}
