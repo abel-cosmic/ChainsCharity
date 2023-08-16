@@ -1,4 +1,14 @@
+import { Link } from "react-router-dom";
+
 const TopNavBar = () => {
+  const socialMediaData = [
+    { name: "Twitter", icon: "twitter.svg", link: "" },
+    { name: "LinkedIn", icon: "linkedin.svg", link: "" },
+    { name: "Instagram", icon: "instagram.svg", link: "" },
+    { name: "Facebook", icon: "facebook.svg", link: "" },
+    { name: "TikTok", icon: "tiktok.svg", link: "" },
+    { name: "YouTube", icon: "youtube.svg", link: "" }
+  ];
   return (
     <div className="flex justify-around  align-middle bg-primary text-white font-semibold p-5">
       <div className="flex flex-row justify-between items-center text-xs w-[20rem] lg:w-[25rem] ">
@@ -20,48 +30,15 @@ const TopNavBar = () => {
         </div>
       </div>
       <div className="gap-10 hidden md:flex">
-        <a href="#">
+      {socialMediaData.map((socialMedia, index) => (
+        <Link key={index}>
           <img
-            className="w-[1.5rem]"
-            src="src/assets/images/social medias/twitter.svg"
-            alt="twitter-icon"
+            className={socialMedia.name === "YouTube" ? "w-[2rem]" : "w-[1.5rem]"}
+            src={`src/assets/images/social medias/${socialMedia.icon}`}
+            alt={`${socialMedia.name} icon`}
           />
-        </a>
-        <a href="#">
-          <img
-            className="w-[1.5rem]"
-            src="src/assets/images/social medias/linkedin.svg"
-            alt="linkedin-icon"
-          />
-        </a>
-        <a href="#">
-          <img
-            className="w-[1.5rem]"
-            src="src/assets/images/social medias/instagram.svg"
-            alt="instagram-icon"
-          />
-        </a>
-        <a href="#">
-          <img
-            className="w-[1.5rem]"
-            src="src/assets/images/social medias/facebook.svg"
-            alt="facebook-icon"
-          />
-        </a>
-        <a href="#">
-          <img
-            className="w-[1.5rem]"
-            src="src/assets/images/social medias/tiktok.svg"
-            alt="tiktok-icon"
-          />
-        </a>
-        <a href="#">
-          <img
-            className="w-[2rem]"
-            src="src/assets/images/social medias/youtube.svg"
-            alt="youtube-icon"
-          />
-        </a>
+        </Link>
+      ))}
       </div>
     </div>
   );

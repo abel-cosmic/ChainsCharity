@@ -28,12 +28,12 @@ const NavigationBar = () => {
           linksVisible ? "hidden" : "flex"
         } flex-col items-start pl-5 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg`}
       >
-        <Link>Home</Link>
-        <Link>About</Link>
-        <Link>Services</Link>
-        <Link>Events</Link>
-        <Link>Teams</Link>
-        <Link>Contact</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">Home</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">About</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">Services</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">Events</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">Teams</Link>
+        <Link className="hover:underline hover:text-secondary hover:font-bold">Contact</Link>
         <div className="flex items-center gap-3 ">
           <p>English</p>
           <div className="movetoggle flex flex-col items-center h-20">

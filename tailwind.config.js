@@ -23,6 +23,8 @@ export default {
         hint: "#6B6B6B",
         lightHint: "#D6D6D6",
         testimonial: "#C0C0C0",
+        footer: "#565656",
+        footerSocialHover:"#005B89"
       },
       boxShadow: {
         blue: "0 10px 40px 0 rgba(13, 130, 190, 0.25)",

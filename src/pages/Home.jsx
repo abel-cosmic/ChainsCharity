@@ -2,6 +2,7 @@ import About from "./home/About";
 import Banner from "./home/Banner";
 import Contacts from "./home/Contact";
 import EventsPage from "./home/EventsPage";
+import Footer from "./home/Footer";
 import NavigationBar from "./home/NavigationBar";
 import NewsLetter from "./home/NewsLetter";
 import OurAim from "./home/OurAim";
@@ -26,6 +27,7 @@ export default function Home() {
       <Team/>
       <Contacts />
       <NewsLetter/>
+      <Footer/>
     </>
   );
 }
