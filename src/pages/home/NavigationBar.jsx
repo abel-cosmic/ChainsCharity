@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
+  const { t } = useTranslation();
+
   const [linksVisible, setLinksVisible] = useState(true);
 
   const toggleLinks = () => {
@@ -41,7 +44,7 @@ const NavigationBar = () => {
         } flex-col flex-wrap  items-start pl-10 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg bg-white`}
       >
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          Home
+          {t('navbar-home')}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
           About
