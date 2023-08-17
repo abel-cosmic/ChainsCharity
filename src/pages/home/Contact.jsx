@@ -6,25 +6,24 @@ import email from "../../assets/images/icons/ic_outline-email.svg";
 import phone from "../../assets/images/icons/material-symbols_call-log.svg";
 import { useTranslation } from "react-i18next";
 
-const info = [
-  {
-    icon: location,
-    title: "Our Address",
-    sub: "A108 Adam Street, New York, NY 535022",
-  },
-  {
-    icon: email,
-    title: "Email Us",
-    sub: "Contact@example.com",
-  },
-  {
-    icon: phone,
-    title: "Call Us",
-    sub: "+1 5589 55488 55",
-  },
-];
 const Contacts = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation();const info = [
+    {
+      icon: location,
+      title: t("contact-oa"),
+      sub: "A108 Adam Street, New York, NY 535022",
+    },
+    {
+      icon: email,
+      title: "Email Us",
+      sub: "Contact@example.com",
+    },
+    {
+      icon: phone,
+      title: "Call Us",
+      sub: "+1 5589 55488 55",
+    },
+  ];
   return (
     <div className="flex flex-col items-center gap-10 py-10 max-md:py-5">
       <div className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:gap-2 max-md:w-full max-md:px-2">
@@ -34,9 +33,7 @@ const Contacts = () => {
           <span className="text-primary">{t("contact-us")}</span>
         </h1>
         <p className="font-medium text-center  max-md:text-sm max-md:flex max-md:flex-col max-md:w-full">
-          "We would love to hear from you! Please feel free to contact us with
-          any questions, comments, or feedback you may have about our
-          organization and our mission to break the cycle of poverty."
+         {t("contact-quote")}
         </p>
       </div>
       <div className="flex flex-col gap-10 max-md:gap-5">
