@@ -1,32 +1,34 @@
 import StatisticsCard from "../../assets/components/StatisticsCard";
+import { useTranslation } from "react-i18next";
 
 const OverViews = () => {
+  const { t } = useTranslation();
   const statistics = [
     {
       id: 0,
       number: 232,
-      title: "Happy Clients",
+      title: t("overview-happy-clients"),
       image: "src/assets/images/icons/happy-icon.svg",
       alt: "happy-icon",
     },
     {
       id: 1,
       number: 4,
-      title: "Projects",
+      title: t("projects"),
       image: "src/assets/images/icons/projects.svg",
       alt: "projects-icon",
     },
     {
       id: 2,
       number: 180,
-      title: "Hours of Support",
+      title: t("overview-hours-of-support"),
       image: "src/assets/images/icons/support.svg",
       alt: "support-icon",
     },
     {
       id: 3,
       number: 14,
-      title: "Hard Workers",
+      title: t("overview-hard-workers"),
       image: "src/assets/images/icons/hard-workers.svg",
       alt: "workers-icon",
     },
