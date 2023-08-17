@@ -4,6 +4,8 @@ import PlaceHolder from "../../assets/components/PlaceHolder";
 import location from "../../assets/images/icons/Group 7.svg";
 import email from "../../assets/images/icons/ic_outline-email.svg";
 import phone from "../../assets/images/icons/material-symbols_call-log.svg";
+import { useTranslation } from "react-i18next";
+
 const info = [
   {
     icon: location,
@@ -22,12 +24,14 @@ const info = [
   },
 ];
 const Contacts = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center gap-10 py-10 max-md:py-5">
       <div className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:gap-2 max-md:w-full max-md:px-2">
-        <PlaceHolder text="CONTACT" />
+        <PlaceHolder text={t("contact")} />
         <h1 className="font-bold text-3xl max-md:text-xl">
-          Contact <span className="text-primary">Us</span>
+          {t("contact-with-this") + " "}
+          <span className="text-primary">{t("contact-us")}</span>
         </h1>
         <p className="font-medium text-center  max-md:text-sm max-md:flex max-md:flex-col max-md:w-full">
           "We would love to hear from you! Please feel free to contact us with

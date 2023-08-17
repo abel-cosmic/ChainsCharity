@@ -29,7 +29,7 @@ const Footer = () => {
   ];
   return (
     <footer>
-      <div className="flex flex-col px-5 md:flex-row md:gap-10 flex-wrap md:justify-evenly lg:px-20 md:flex-nowrap">
+      <div className="flex flex-col px-5 pb-5 md:flex-row md:gap-10 flex-wrap md:justify-evenly lg:px-20 md:flex-nowrap">
         <div className="">
           <img
             className="w-[10rem]"
@@ -150,7 +150,7 @@ const Footer = () => {
       </div>
       <div className="bg-primary bg-opacity-5 px-5 py-10 flex flex-col gap-4 md:flex-row md:justify-evenly">
         <p>
-          © {t("footer-copyright")} <span className="font-bold">ChainsCharity .</span>{t("footer-arr")}</p>
+          © {t("footer-copyright")} <span className="font-bold">ChainsCharity. </span>{t("footer-arr")}</p>
         <p>
           {t("footer-designed-by") + " "}
           <span className="text-primary font-bold">Tridents Technologies</span>

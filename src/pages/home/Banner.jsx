@@ -5,8 +5,8 @@ const Banner = () => {
   const { t } = useTranslation();
   return (
     <section className="banner bg-no-repeat ">
-      <div className="flex flex-col gap-5 lg:gap-10 px-10 lg:px-40 pt-60 pb-40 text-white">
-        <p className="text-xl lg:text-5xl">{t("banner-welcome")}</p>
+      <div className="flex flex-col gap-5 lg:gap-10 px-10 lg:px-40 py-36 md:pt-60 md:pb-40 text-white">
+        <p className="text-2xl lg:text-5xl">{t("banner-welcome")}</p>
         <p className="text-lg lg:text-xl">{t("banner-text")}</p>
         <input
           type="submit"
