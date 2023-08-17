@@ -43,7 +43,7 @@ const CardForm = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="w-1/2 shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-8 max-lg:text-sm"
+      className="w-full shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-8 max-lg:text-sm"
     >
       <div className="flex flex-row gap-12 w-full max-md:flex-col max-lg:gap-4 ">
         <div className="relative w-full">
