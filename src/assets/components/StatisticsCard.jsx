@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 const StatisticsCard = ({ stat }) => {
     const [number, setNumber] = useState(0);
-    const countUpSeconds = stat.number > 300 ? 0 : 2000;
+    const countUpSeconds = stat.number > 300 ? 500 : 2000;
     const incrementRate = countUpSeconds / stat.number;
     // {console.log(incrementRate, countUpSeconds, stat.number)}   
     useEffect(() => {
       const interval = setInterval(() => {
-        setNumber(prevNumber => (prevNumber < stat.number ? prevNumber + 1 : prevNumber));
+        setNumber(prevNumber => (prevNumber < stat.number ? prevNumber + 1 : prevNumber ));
       }, incrementRate); 
   
       return () => {

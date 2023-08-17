@@ -74,12 +74,3 @@ left: 70%;
   width: 100%;
   background-size: cover;
 }
-
-/* to show the social media links in profile component */
-.socla-media-link {
-  display: none; /* Initial display value */
-}
-
-.profileCard:hover .socla-media-link  {
-  display: flex; /* Hide the child when grandparent is hovered */
-}

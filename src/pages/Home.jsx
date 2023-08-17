@@ -19,7 +19,7 @@ export default function Home() {
       <NavigationBar/>
       <Banner/>
       <OurAim />
-      {/* <About /> */}
+      <About />
       <OverViews/>
       <Services />
       <Testimonial />
