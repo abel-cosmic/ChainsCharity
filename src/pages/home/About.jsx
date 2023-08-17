@@ -4,38 +4,36 @@ import speaker from "../../assets/images/icons/speaker.svg";
 import soap from "../../assets/images/icons/soap.svg";
 import heart from "../../assets/images/icons/heart.svg";
 import CardAbout from "../../assets/components/CardAbout";
-const cards = [
-  {
-    image: speaker,
-    title: "Heartbreaking News: 300,000 Children Lost due to Lack of Soap",
-    subtext:
-      "Calling all hearts to unite! Today, we bring to your attention a devastating crisis that has claimed the lives of 300,000 innocent children. Their loss is a poignant reminder of how something as basic as soap can make a life-saving difference.",
-  },
-  {
-    image: soap,
-    title: "The Power of Soap: Saving Lives and Creating Hope ",
-    subtext:
-      "It's hard to fathom that something as simple as soap could hold such life-saving potential. But in impoverished communities across the globe, access to basic hygiene essentials can be a matter of life or death. Chains Charity has made it its mission to tackle this critical issue and prevent further tragedies.",
-  },
-  {
-    image: heart,
-    title: " The Impact of Your Support ",
-    subtext:
-      "Chains Charity has been working tirelessly to distribute soap and hygiene kits to underprivileged communities in regions where access to clean water and sanitation is scarce. By providing these essentials, we empower children and their families to combat preventable diseases and break the vicious cycle of poverty.",
-  },
-];
+import { useTranslation } from "react-i18next";
+
 const About = () => {
+  const { t } = useTranslation();
+  const cards = [
+    {
+      image: speaker,
+      title: t("about-card1-title"),
+      subtext: t("about-card1-subtext"),
+    },
+    {
+      image: soap,
+      title: t("about-card2-title"),
+      subtext: t("about-card2-subtext"),
+    },
+    {
+      image: heart,
+      title: t("about-card3-title"),
+      subtext: t("about-card3-subtext"),
+    },
+  ];
   return (
     <div className="flex flex-col items-center py-10 gap-4 bg-secondary bg-opacity-5 max-md:gap-10">
       <div className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:flex max-md:flex-col max-md:w-full max-md:gap-4">
-        <PlaceHolder text="ABOUT" />
+        <PlaceHolder text={t('about')} />
         <h1 className="font-bold text-3xl max-md:text-xl">
-          Find Out More <span className="text-primary">About Us </span>
+          {t('about-sub')} <span className="text-primary">{t('about-sub-next')}</span>
         </h1>
         <p className="font-medium text-center max-md:text-sm">
-          Together, we believe in the power of small actions that create a BIG
-          impact! Chains Charity is proud to be a non-profit organization on a
-          mission to recycle soap and bring smiles to the faces of those in need
+          {t("about-context")}
         </p>
       </div>
       <div className="flex flex-row gap-20 max-md:flex-col max-lg:flex-col max-md:gap-10">
@@ -46,14 +44,10 @@ const About = () => {
         />
         <div className="flex  flex-col gap-10 max-md:items-center max-lg:px-4 max-md:gap-4">
           <h1 className="text-2xl font-bold max-md:text-xl">
-            Chains Charity: Making a Difference, One Soap at a Time
+            {t("about-header")}
           </h1>
           <p className="w-[40rem] max-md:flex max-md:flex-col max-md:w-full max-md:text-sm">
-            Chains Charity has been working tirelessly to distribute soap and
-            hygiene kits to underprivileged communities in regions where access
-            to clean water and sanitation is scarce. By providing these
-            essentials, we empower children and their families to combat
-            preventable diseases and break the vicious cycle of poverty.
+            {t("about-subtext")}
           </p>
           <div className="flex flex-col gap-10  max-md:w-full">
             {cards.map((card, index) => (
