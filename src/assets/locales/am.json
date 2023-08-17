@@ -1,4 +1,10 @@
 {
     "banner-welcome": "ወደ ሰንሰለት በጎ አድራጎት ድርጅት እንኳን በደህና መጡ",
-    "navbar-home": "ቤት"
+    "home": "ቤት",
+    "about": "ስለ",
+    "services": "አገልግሎቶች",
+    "events": "ክስተቶች",
+    "teams": "ቡድኖች",
+    "contact": "እውቂያ",
+    "language": "ቋንቋ"
 }

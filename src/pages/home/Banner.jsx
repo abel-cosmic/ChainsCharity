@@ -4,9 +4,6 @@ import i18n from '../../i18n';
 
 const Banner = () => {
   const { t } = useTranslation();
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
   return (
     <section className="banner bg-no-repeat ">
       <div className="flex flex-col gap-5 lg:gap-10 px-10 lg:px-40 pt-60 pb-40 text-white">
@@ -17,7 +14,6 @@ const Banner = () => {
         <input
           type="submit"
           value="Doante Now"
-          onClick={() => changeLanguage('am')}
           className="bg-primary cursor-pointer bg-opacity-90 w-fit text-white px-28 py-4 my-8 rounded text-xl font-semibold hover:bg-opacity-100 max-md:self-start max-lg:text-sm"
         />
       </div>

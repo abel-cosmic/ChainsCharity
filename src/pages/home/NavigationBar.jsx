@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); //this is how we access our text
+  // made for handling the language change
+  const { i18n } = useTranslation();
+  const [isAmharic, setIsAmharic] = useState(false);
+  const toggleLanguage = () => {
+    const newLanguage = isAmharic ? "en" : "am";
+    i18n.changeLanguage(newLanguage);
+    setIsAmharic(!isAmharic);
+  };
 
   const [linksVisible, setLinksVisible] = useState(true);
 
@@ -44,28 +52,33 @@ const NavigationBar = () => {
         } flex-col flex-wrap  items-start pl-10 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg bg-white`}
       >
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          {t('navbar-home')}
+          {t("home")}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          About
+        {t("about")}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          Services
+        {t("services")}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          Events
+        {t("events")}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          Teams
+        {t("teams")}
         </Link>
         <Link className="hover:underline hover:text-secondary hover:font-bold">
-          Contact
+        {t("contact")}
         </Link>
         <div className="flex items-center gap-3">
           <p>English</p>
           <div className="movetoggle flex flex-col items-center h-20">
-            <p>language</p>
-            <input type="checkbox" className="toggle-button" />
+            <p>{t("language")}</p>
+            <input
+              type="checkbox"
+              className="toggle-button"
+              checked={isAmharic}
+              onChange={toggleLanguage}
+            />
           </div>
           <p>አማርኛ</p>
         </div>
