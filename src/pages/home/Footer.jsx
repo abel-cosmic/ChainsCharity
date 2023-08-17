@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
 
   const secondary = ["bg-primary  hover:font-bold font-semibold","bg-[#fff]","text-white"];
   const linkPack1 = [
-    { link: "", text: "Home" },
-    { link: "", text: "About" },
-    { link: "", text: "Services" },
-    { link: "", text: "Events" },
-    { link: "", text: "Teams" },
-    { link: "", text: "Contact" },
+    { link: "", text: t("home")},
+    { link: "", text: t("about") },
+    { link: "", text: t("services")},
+    { link: "", text: t("events") },
+    { link: "", text: t("teams") },
+    { link: "", text: t("contact") },
   ];
   const linkPack2 = [
-    { link: "", text: "Education Empowerment initiatives" },
-    { link: "", text: "Nutrition and Food Security Programs" },
-    { link: "", text: "Clean Water  Initiatives" },
-    { link: "", text: "Microfinance and Enterpreneurship Support" },
+    { link: "", text: t("footer-s-eei")},
+    { link: "", text: t("footer-s-nafsp") },
+    { link: "", text: t("footer-s-cwi") },
+    { link: "", text: t("footer-s-maes") },
   ];
   const socialMediaData = [
     { name: "Twitter", icon: "twitter.svg", link: "" },
@@ -53,7 +55,7 @@ const Footer = () => {
           </address>
         </div>
         <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">Usefull links</h1>
+          <h1 className="font-bold text-footer mb-2 text-sm">{t("footer-usefull-links")}</h1>
           <ul>
             {linkPack1.map((item) => (
               <li>
@@ -73,7 +75,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">Our Services</h1>
+          <h1 className="font-bold text-footer mb-2 text-sm">{t("footer-our-services")}</h1>
           <ul>
             {linkPack2.map((item) => (
               <li>
@@ -94,11 +96,10 @@ const Footer = () => {
         </div>
         <div className="mt-5 flex flex-col gap-2 ">
           <h1 className="font-bold text-footer text-sm">
-            Our Social Networks
+            {t("footer-our-social-networks")}
           </h1>
           <p className="text-xs">
-            Follow us on our social medias for updated news and to support our
-            huge influencing family.
+           {t("footer-our-sn-text")}
           </p>
           <div className="flex gap-4 sm:gap-12 md:gap-5 items-center">
             <Link className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3">
@@ -149,11 +150,9 @@ const Footer = () => {
       </div>
       <div className="bg-primary bg-opacity-5 px-5 py-10 flex flex-col gap-4 md:flex-row md:justify-evenly">
         <p>
-          © Copyright <span className="font-bold">ChainsCharity.</span> All
-          Rights Reserved
-        </p>
+          © {t("footer-copyright")} <span className="font-bold">ChainsCharity .</span>{t("footer-arr")}</p>
         <p>
-          Designed by{" "}
+          {t("footer-designed-by") + " "}
           <span className="text-primary font-bold">Tridents Technologies</span>
         </p>
       </div>

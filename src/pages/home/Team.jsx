@@ -1,7 +1,10 @@
 import PlaceHolder from "../../assets/components/PlaceHolder";
 import Profile from "../../assets/components/Profile";
+import { useTranslation } from "react-i18next";
 
 const Team = () => {
+  const { t } = useTranslation();
+
   const people = [
     {
       name: "John Doe",
@@ -62,14 +65,13 @@ const Team = () => {
 
   return (
     <div className="bg-primary bg-opacity-5 flex flex-col items-center gap-5 pt-10 pb-10 md:pb-24 px-20">
-      <PlaceHolder text="TEAM" />
+      <PlaceHolder text={t("team")} />
       <h1 className="font-bold text-3xl max-md:text-lg">
-        Our Hardworking <span className="text-primary">Team</span>
+        {t("team-our-hardworking") + " "} 
+        <span className="text-primary">{t("team")}</span>
       </h1>
       <blockquote className="w-full lg:w-[40rem] text-center lg:text-l font-semibold">
-        "At Chains Charity, our team is made up of passionate and dedicated
-        individuals who are committed to breaking the cycle of poverty and
-        making a positive impact in our community."
+        {t("team-quote")}
       </blockquote>
       <div className="flex justify-center gap-5 lg:gap-10 flex-wrap mt-10">
         {people.map((person) => (
