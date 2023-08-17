@@ -4,17 +4,21 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation();
 
-  const secondary = ["bg-primary  hover:font-bold font-semibold","bg-[#fff]","text-white"];
+  const secondary = [
+    "bg-primary  hover:font-bold font-semibold",
+    "bg-[#fff]",
+    "text-white",
+  ];
   const linkPack1 = [
-    { link: "", text: t("home")},
+    { link: "", text: t("home") },
     { link: "", text: t("about") },
-    { link: "", text: t("services")},
+    { link: "", text: t("services") },
     { link: "", text: t("events") },
     { link: "", text: t("teams") },
     { link: "", text: t("contact") },
   ];
   const linkPack2 = [
-    { link: "", text: t("footer-s-eei")},
+    { link: "", text: t("footer-s-eei") },
     { link: "", text: t("footer-s-nafsp") },
     { link: "", text: t("footer-s-cwi") },
     { link: "", text: t("footer-s-maes") },
@@ -55,8 +59,10 @@ const Footer = () => {
           </address>
         </div>
         <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">{t("footer-usefull-links")}</h1>
-          <ul>
+          <h1 className="font-bold text-footer mb-2 text-sm">
+            {t("footer-usefull-links")}
+          </h1>
+          <ul className="flex flex-col gap-2">
             {linkPack1.map((item) => (
               <li>
                 <Link
@@ -65,7 +71,7 @@ const Footer = () => {
                 >
                   <img
                     className="mr-5 md:mr-2 w-[0.3rem]"
-                    src="src/assets/images/icons/Vector (copy).svg"
+                    src="src/assets/images/icons/Vector (6).svg"
                     alt="arrow-icon"
                   />
                   {item.text}
@@ -75,20 +81,22 @@ const Footer = () => {
           </ul>
         </div>
         <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">{t("footer-our-services")}</h1>
-          <ul>
+          <h1 className="font-bold text-footer mb-2 text-sm">
+            {t("footer-our-services")}
+          </h1>
+          <ul className="flex flex-col gap-2 ">
             {linkPack2.map((item) => (
               <li>
                 <Link
                   to={item.link}
-                  className="hover:underline hover:text-secondary hover:font-semibold flex text-xs"
+                  className="hover:underline hover:text-secondary  flex text-xs"
                 >
                   <img
                     className="mr-5 md:mr-2 w-[0.3rem]"
-                    src="src/assets/images/icons/Vector (copy).svg"
+                    src="src/assets/images/icons/Vector (6).svg"
                     alt="arrow-icon"
                   />
-                  {item.text}
+                  <p>{item.text}</p>
                 </Link>
               </li>
             ))}
@@ -98,9 +106,7 @@ const Footer = () => {
           <h1 className="font-bold text-footer text-sm">
             {t("footer-our-social-networks")}
           </h1>
-          <p className="text-xs">
-           {t("footer-our-sn-text")}
-          </p>
+          <p className="text-xs">{t("footer-our-sn-text")}</p>
           <div className="flex gap-4 sm:gap-12 md:gap-5 items-center">
             <Link className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3">
               <img
@@ -150,7 +156,10 @@ const Footer = () => {
       </div>
       <div className="bg-primary bg-opacity-5 px-5 py-10 flex flex-col gap-4 md:flex-row md:justify-evenly">
         <p>
-          © {t("footer-copyright")} <span className="font-bold">ChainsCharity. </span>{t("footer-arr")}</p>
+          © {t("footer-copyright")}{" "}
+          <span className="font-bold">ChainsCharity. </span>
+          {t("footer-arr")}
+        </p>
         <p>
           {t("footer-designed-by") + " "}
           <span className="text-primary font-bold">Tridents Technologies</span>

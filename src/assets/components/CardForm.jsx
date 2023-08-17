@@ -1,7 +1,9 @@
 import { useFormik } from "formik";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const CardForm = () => {
+  const { t } = useTranslation();
   const initialValues = {
     name: "",
     email: "",
@@ -14,18 +16,18 @@ const CardForm = () => {
   const validate = (values) => {
     let errors = {};
     if (!values.name) {
-      errors.name = "Required*";
+      errors.name = t("required");
     }
     if (!values.email) {
-      errors.email = "Required*";
+      errors.email = t("required");
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = "Invalid email format";
+      errors.email = t("invalid-email");
     }
     if (!values.subject) {
-      errors.subject = "Required*";
+      errors.subject = t("required");
     }
     if (!values.message) {
-      errors.message = "Required*";
+      errors.message =  t("required");
     }
     return errors;
   };
@@ -52,7 +54,7 @@ const CardForm = () => {
           ) : null}
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder={t("your-name")}
             name="name"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
@@ -67,7 +69,7 @@ const CardForm = () => {
           ) : null}
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder={t("your-email")}
             name="email"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
@@ -84,7 +86,7 @@ const CardForm = () => {
           ) : null}
           <input
             type="text"
-            placeholder="Subject"
+            placeholder={t("subject")}
             name="subject"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
@@ -101,7 +103,7 @@ const CardForm = () => {
           ) : null}
           <textarea
             type="text"
-            placeholder="Message"
+            placeholder={t("message")}
             name="message"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
@@ -114,7 +116,7 @@ const CardForm = () => {
       </div>
       <input
         type="submit"
-        value="Send Message"
+        value={t("send-message")}
         className="bg-primary cursor-pointer bg-opacity-90 text-white px-10 py-2 rounded hover:bg-opacity-100 max-md:self-start max-lg:text-sm"
       />
     </form>
