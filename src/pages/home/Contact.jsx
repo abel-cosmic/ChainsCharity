@@ -2,6 +2,8 @@ import CardForm from "../../assets/components/CardForm";
 import CardInfo from "../../assets/components/CardInfo";
 import PlaceHolder from "../../assets/components/PlaceHolder";
 import location from "../../assets/images/icons/Group 7.svg";
+import email from "../../assets/images/icons/ic_outline-email.svg";
+import phone from "../../assets/images/icons/material-symbols_call-log.svg";
 const info = [
   {
     icon: location,
@@ -9,12 +11,12 @@ const info = [
     sub: "A108 Adam Street, New York, NY 535022",
   },
   {
-    icon: location,
+    icon: email,
     title: "Email Us",
     sub: "Contact@example.com",
   },
   {
-    icon: location,
+    icon: phone,
     title: "Call Us",
     sub: "+1 5589 55488 55",
   },
@@ -34,8 +36,8 @@ const Contacts = () => {
         </p>
       </div>
       <div className="flex flex-col gap-10 max-md:gap-5">
-        <div className="flex flex-row gap-14 max-lg:flex-col max-lg:gap-4">
-          <div className="w-[54%] max-lg:w-full">
+        <div className="flex flex-row gap-8 max-lg:flex-col max-lg:gap-4">
+          <div className="w-[50%] max-lg:w-full">
             <CardInfo
               icon={info[0].icon}
               sub={info[0].sub}
@@ -57,9 +59,9 @@ const Contacts = () => {
             />
           </div>
         </div>
-        <div className="flex flex-row gap-16 w-full h-fit max-md:flex-col max-md:px-4 max-md:gap-6 max-lg:gap-6">
+        <div className="flex flex-row gap-8 w-full h-fit max-md:flex-col max-md:px-4 max-md:gap-6 max-lg:gap-6">
           <iframe
-            className="rounded-xl w-1/2 h-[32rem] max-md:w-full max-md:h-[20rem] max-md:rounded-none"
+            className="rounded-xl w-full h-[32rem] max-md:w-full max-md:h-[20rem] max-md:rounded-none"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6256.250506600523!2d38.71797160763153!3d8.9545593713985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b813e5ca20165%3A0x23b28360006aa821!2sHope%20University%20College%20hall!5e0!3m2!1sen!2set!4v1686243415813!5m2!1sen!2set"
             width="600"
             height="450"
