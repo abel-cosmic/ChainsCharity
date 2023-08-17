@@ -3,6 +3,7 @@ import error from "./assets/images/icons/404 Error-rafiki 1.png";
 import { Link } from "react-router-dom";
 import TopNavBar from "./pages/home/TopNavBar";
 import NavigationBar from "./pages/home/NavigationBar";
+import Footer from "./pages/home/Footer";
 export default function ErrorPage() {
   return (
     <div>
@@ -26,6 +27,7 @@ export default function ErrorPage() {
           </div>
           <img src={error} alt="error 404" />
         </div>
+        <Footer/>
     </div>
   );
 }
