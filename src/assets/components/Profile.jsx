@@ -10,11 +10,9 @@ const Profile = ({ profile }) => {
   };
   const [isHovered, setHovered] = useState(false);
   return (
-    <div className=" bg-neutral flex flex-col w-[20rem] hover:shadow-blue"
-    onMouseEnter={() => setHovered(true)}
-    onMouseLeave={() => setHovered(false)}>
-      <div style={divImageStyle} className="h-[20rem] ">
-        <div className={`${isHovered ? "flex" : "hidden"} flex items-end gap-5 mb-2 self-center justify-center pb-4 h-[20rem]`}>
+    <div className="profileCard bg-neutral flex flex-col w-[20rem] hover:shadow-blue">
+      <div style={divImageStyle} className="h-[20rem]  max-md:w-[300px]">
+        <div className="socla-media-link flex items-end gap-5 mb-2 self-center justify-center pb-10 h-[20rem] ">
           <Link
             to={profile.socialMedia.twitter}
             className="bg-primary bg-opacity-70 p-2 rounded-lg hover:bg-opacity-100"

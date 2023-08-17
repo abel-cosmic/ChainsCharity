@@ -5,11 +5,11 @@ const NewsLetter = () => {
       <p className="font-semibold text-base max-lg:text-sm text-center">
         Tamen quem nulla quae legam multos aute sint culpa legam noster magna
       </p>
-      <form className="flex flex-row gap-0 shadow-cust ">
+      <form className="flex flex-row gap-0 shadow-cust">
           <input
             type="text"
             required
-            className="w-[38rem] h-[2.5rem] max-md:w-[15rem] "
+            className="w-[38rem] h-[2.5rem] max-md:w-[10rem] "
           />
           <button
             type="submit"

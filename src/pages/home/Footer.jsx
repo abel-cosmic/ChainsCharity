@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+  const secondary = ["bg-primary  hover:font-bold font-semibold","bg-[#fff]","text-white"];
   const linkPack1 = [
     { link: "", text: "Home" },
     { link: "", text: "About" },
@@ -147,9 +149,13 @@ const Footer = () => {
       </div>
       <div className="bg-primary bg-opacity-5 px-5 py-10 flex flex-col gap-4 md:flex-row md:justify-evenly">
         <p>
-          © Copyright <span className="font-bold">ChainsCharity.</span> All Rights Reserved
+          © Copyright <span className="font-bold">ChainsCharity.</span> All
+          Rights Reserved
         </p>
-        <p>Designed by <span className="text-primary font-bold">Tridents Technologies</span></p>
+        <p>
+          Designed by{" "}
+          <span className="text-primary font-bold">Tridents Technologies</span>
+        </p>
       </div>
     </footer>
   );
