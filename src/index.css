@@ -67,10 +67,3 @@ left: 70%;
 .movetoggle {
    float: right;
 }
-/* banner image */
-
-.banner{
-  background-image: url('src/assets/images/banner.png');
-  width: 100%;
-  background-size: cover;
-}
