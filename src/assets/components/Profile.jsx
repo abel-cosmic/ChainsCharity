@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import twitter from "./../../assets/images/social medias/twitter.svg";
+import instagram from "./../../assets/images/social medias/instagram.svg";
+import facebook from "./../../assets/images/social medias/facebook.svg";
+import linkedin from "./../../assets/images/social medias/linkedin.svg";
 
 const Profile = ({ profile }) => {
   const divImageStyle = {
@@ -21,7 +25,7 @@ const Profile = ({ profile }) => {
           >
             <img
               className="w-[1.65rem]"
-              src="src/assets/images/social medias/twitter.svg"
+              src={twitter}
               alt="twitter-icon"
             />
           </Link>
@@ -31,7 +35,7 @@ const Profile = ({ profile }) => {
           >
             <img
               className="w-[1.65rem]"
-              src="src/assets/images/social medias/instagram.svg"
+              src={instagram}
               alt="instagram-icon"
             />
           </Link>
@@ -41,7 +45,7 @@ const Profile = ({ profile }) => {
           >
             <img
               className="w-[1.65rem]"
-              src="src/assets/images/social medias/facebook.svg"
+              src={facebook}
               alt="facebook-icon"
             />
           </Link>
@@ -51,7 +55,7 @@ const Profile = ({ profile }) => {
           >
             <img
               className="w-[1.65rem]"
-              src="src/assets/images/social medias/linkedin.svg"
+              src={linkedin}
               alt="linkedin-icon"
             />
           </Link>
