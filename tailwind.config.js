@@ -30,6 +30,9 @@ export default {
         blue: "0 10px 40px 0 rgba(13, 130, 190, 0.25)",
         cust: "0 10px 40px 0 rgba(46, 46, 46, 0.1)",
       },
+      backgroundImage: {
+        'banner': "url('src/assets/images/banner.png')"
+       }
     },
   },
   plugins: [],
