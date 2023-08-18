@@ -22,9 +22,9 @@ export default function Home() {
       <About />
       <OverViews/>
       <Services />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <EventsPage />
-      <Team/>
+      {/* <Team/> */}
       <Contacts />
       <NewsLetter/>
       <Footer/>

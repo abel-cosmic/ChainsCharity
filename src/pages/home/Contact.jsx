@@ -15,12 +15,12 @@ const Contacts = () => {
     },
     {
       icon: email,
-      title: "Email Us",
+      title: t("contact-email-title"),
       sub: "Contact@example.com",
     },
     {
       icon: phone,
-      title: "Call Us",
+      title: t("contact-call-title"),
       sub: "+1 5589 55488 55",
     },
   ];

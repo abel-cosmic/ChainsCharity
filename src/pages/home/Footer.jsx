@@ -93,19 +93,19 @@ const Footer = () => {
           <h1 className="font-bold text-footer mb-2 text-sm">
             {t("footer-our-services")}
           </h1>
-          <ul>
+          <ul className="flex flex-col gap-2 ">
             {linkPack2.map((item) => (
               <li>
                 <Link
                   to={item.link}
-                  className="hover:underline hover:text-secondary hover:font-semibold flex text-xs"
+                  className="hover:underline hover:text-secondary  flex text-xs"
                 >
                   <img
                     className="mr-5 md:mr-2 w-[0.3rem]"
                     src={arrow}
                     alt="arrow-icon"
                   />
-                  {item.text}
+                  <p>{item.text}</p>
                 </Link>
               </li>
             ))}

@@ -1,4 +1,6 @@
+import { useTranslation } from "react-i18next";
 const NewsLetter = () => {
+  const { t } = useTranslation();
   return (
     <div className="w-full flex flex-col bg-primary bg-opacity-5 items-center py-28 gap-4 max-md:px-2">
       <p className="font-bold text-3xl max-lg:text-lg">Join Our Newsletter</p>
@@ -15,7 +17,7 @@ const NewsLetter = () => {
             type="submit"
             className="bg-primary flex flex-row items center  justify-center bg-opacity-90 hover:bg-opacity-100 cursor-pointer text-white py-2 px-10 max-md:text-sm"
           >
-            Subscribe
+           {t('subscribe')}
           </button>
         </form>
     </div>
