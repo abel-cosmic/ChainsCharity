@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import logo from "./../../assets/images/Logo.png";
+import cancel from "./../../assets/images/icons/cancel.svg";
+import hamburger from "./../../assets/images/icons/Frame 86.svg";
 
 const NavigationBar = () => {
   const { t } = useTranslation(); //this is how we access our text
@@ -19,6 +22,15 @@ const NavigationBar = () => {
     setLinksVisible(!linksVisible);
   };
 
+  const navigationLinks = [
+    { textKey: 'home', link: '' },
+    { textKey: 'about', link: '' },
+    { textKey: 'services', link: '' },
+    { textKey: 'events', link: '' },
+    { textKey: 'teams', link: '' },
+    { textKey: 'contact', link: '' },
+  ];
+
   return (
     <nav
       className={` ${
@@ -29,19 +41,15 @@ const NavigationBar = () => {
         <img
           className={`${
             linksVisible ? "" : "opacity-0 h-0"
-          } w-[5rem] md:w-[7rem]`}
-          src="src/assets/images/Logo.png"
+          } w-[5rem] md:w-[6rem]`}
+          src={logo}
           alt="chains-logo"
         />
         <img
           className={`md:hidden ${
             linksVisible ? " w-[2rem]" : "w-[1.2rem] m-4"
           }`}
-          src={`${
-            linksVisible
-              ? "src/assets/images/icons/Frame 86.svg"
-              : "src/assets/images/icons/cancel.svg"
-          }`}
+          src={`${linksVisible ? hamburger : cancel}`}
           alt=""
           onClick={toggleLinks}
         />
@@ -51,24 +59,14 @@ const NavigationBar = () => {
           linksVisible ? "hidden" : "flex max-md:h-screen pt-5"
         } flex-col flex-wrap  items-start pl-10 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg bg-white`}
       >
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-          {t("home")}
+        {navigationLinks.map((link, index) => (
+        <Link
+          key={index}// You can add a "link" attribute here if needed
+          className="hover:underline hover:text-secondary hover:font-bold"
+        >
+          {t(link.textKey)}
         </Link>
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-        {t("about")}
-        </Link>
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-        {t("services")}
-        </Link>
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-        {t("events")}
-        </Link>
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-        {t("teams")}
-        </Link>
-        <Link className="hover:underline hover:text-secondary hover:font-bold">
-        {t("contact")}
-        </Link>
+      ))}
         <div className="flex items-center gap-3">
           <p>English</p>
           <div className="movetoggle flex flex-col items-center h-20">

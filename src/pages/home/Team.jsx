@@ -1,6 +1,11 @@
 import PlaceHolder from "../../assets/components/PlaceHolder";
 import Profile from "../../assets/components/Profile";
 import { useTranslation } from "react-i18next";
+import person1 from "./../../assets/images/persons/team-1.png";
+import person2 from "./../../assets/images/persons/team-2.png";
+import person3 from "./../../assets/images/persons/team-3.png";
+import person4 from "./../../assets/images/persons/team-4.png";
+
 
 const Team = () => {
   const { t } = useTranslation();
@@ -8,7 +13,7 @@ const Team = () => {
   const people = [
     {
       name: "John Doe",
-      image: "src/assets/images/persons/team-1.png",
+      image: person1,
       position: "Web Developer",
       socialMedia: {
         twitter: "https://twitter.com/johndoe",
@@ -19,7 +24,7 @@ const Team = () => {
     },
     {
       name: "Jane Smith",
-      image: "src/assets/images/persons/team-2.png",
+      image: person2,
       position: "Graphic Designer",
       socialMedia: {
         twitter: "https://twitter.com/janesmith",
@@ -30,7 +35,7 @@ const Team = () => {
     },
     {
       name: "Michael Johnson",
-      image: "src/assets/images/persons/team-3.png",
+      image: person3,
       position: "Software Engineer",
       socialMedia: {
         twitter: "https://twitter.com/michaeljohnson",
@@ -41,7 +46,7 @@ const Team = () => {
     },
     {
       name: "Emily Davis",
-      image: "src/assets/images/persons/team-3.png",
+      image: person4,
       position: "UX Designer",
       socialMedia: {
         twitter: "https://twitter.com/emilydavis",
@@ -52,7 +57,7 @@ const Team = () => {
     },
     {
       name: "Emily Davis",
-      image: "src/assets/images/persons/team-4.png",
+      image: person1,
       position: "UX Designer",
       socialMedia: {
         twitter: "https://twitter.com/emilydavis",
