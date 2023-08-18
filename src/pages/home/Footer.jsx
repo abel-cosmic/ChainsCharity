@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logo from "./../../assets/images/Logo.png";
-import arrow from "./../../assets/images/icons/Vector (copy).svg";
+import arrow from "./../../assets/images/icons/Vector (6).svg";
 import twitter from "./../../assets/images/social medias/twitter.svg";
 import instagram from "./../../assets/images/social medias/instagram.svg";
 import facebook from "./../../assets/images/social medias/facebook.svg";
