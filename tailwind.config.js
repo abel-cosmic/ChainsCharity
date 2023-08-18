@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import banner from "./../../assets/images/banner.png";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -31,7 +34,7 @@ export default {
         cust: "0 10px 40px 0 rgba(46, 46, 46, 0.1)",
       },
       backgroundImage: {
-        'banner': "url('src/assets/images/banner.png')"
+        'banner': banner
        }
     },
   },
