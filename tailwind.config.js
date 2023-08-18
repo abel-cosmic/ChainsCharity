@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-import banner from "./../../assets/images/banner.png";
-
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -27,15 +25,12 @@ export default {
         lightHint: "#D6D6D6",
         testimonial: "#C0C0C0",
         footer: "#565656",
-        footerSocialHover:"#005B89"
+        footerSocialHover: "#005B89",
       },
       boxShadow: {
         blue: "0 10px 40px 0 rgba(13, 130, 190, 0.25)",
         cust: "0 10px 40px 0 rgba(46, 46, 46, 0.1)",
       },
-      backgroundImage: {
-        'banner': banner
-       }
     },
   },
   plugins: [],

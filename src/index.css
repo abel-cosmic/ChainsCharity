@@ -12,7 +12,7 @@
   font-family: "Manrope";
 }
 .cover-image {
-  background-image: url("src/assets/images/persons/testimonials-bg.png");
+  background-image: url("./assets/images/persons/testimonials-bg.png");
   height: 35rem;
 }
 
@@ -27,7 +27,7 @@
 
 }
 .cover-image{
-    background-image: url('src/assets/images/persons/testimonials-bg.png');
+    background-image: url('./assets/images/persons/testimonials-bg.png');
     height: 35rem;
 }
 
@@ -66,4 +66,11 @@ left: 70%;
 }
 .movetoggle {
    float: right;
+}
+/* banner image */
+
+.banner{
+  background-image: url('./assets/images/banner.png');
+  width: 100%;
+  background-size: cover;
 }
