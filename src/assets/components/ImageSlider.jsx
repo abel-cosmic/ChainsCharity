@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SliderButton from "./SliderButton";
 import right_arrow from "./../images/icons/Frame 35 (1).png";
 import left_arrow from "./../images/icons/Frame 35.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ImageSlider = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -48,11 +49,17 @@ const ImageSlider = ({ images }) => {
                 overflow: "hidden",
               }}
             >
-              <img
-                src={image}
-                alt={`Image ${index}`}
-                className="w-full h-full object-cover max-md:h-44 "
-              />
+              <AnimatePresence>
+                <motion.img
+                  key={image.src}
+                  initial={{ opacity: 0, y: 200 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  src={image}
+                  alt={`Image ${index}`}
+                  className="w-full h-full object-cover max-md:h-44 "
+                />
+              </AnimatePresence>
             </div>
           ))}
         </div>

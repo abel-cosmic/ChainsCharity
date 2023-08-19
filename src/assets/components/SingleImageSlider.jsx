@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import right_arrow from "./../images/icons/Frame 35 (1).png";
 import left_arrow from "./../images/icons/Frame 35.png";
 import SliderButton from "./SliderButton";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

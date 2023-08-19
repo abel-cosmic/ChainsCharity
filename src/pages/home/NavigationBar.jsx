@@ -41,6 +41,8 @@ const NavigationBar = () => {
       whileHover: { scale: 1.1 },
       animate: { opacity: 1 },
       transition: { type: "spring", stiffness: 400, damping: 10 },
+      open: { opacity: 1, x: 0 },
+      closed: { opacity: 0, x: "-100%" },
     },
     links: {
       initial: { y: -80, opacity: 0 },
@@ -71,7 +73,7 @@ const NavigationBar = () => {
           variants={NavBarVariants.images}
           whileHover="whileHover"
           initial="initial"
-          animate="animate"
+          animate={`animate ${linksVisible ? "open" : "closed"}`}
           transition="transition"
           className={`${
             linksVisible ? "" : "opacity-0 h-0"
@@ -114,7 +116,7 @@ const NavigationBar = () => {
               {t(link.textKey)}
             </Link>
             <motion.div
-              className="line absolute bottom-0 left-0 w-0 h-1 bg-secondary transition-width duration-300 ease"
+              className="line absolute bottom-0 left-0 w-0 h-1 bg-secondary transition-width duration-300 ease max-md:hidden"
               transition={{ type: "spring" }}
             ></motion.div>
           </motion.div>
@@ -127,8 +129,8 @@ const NavigationBar = () => {
           transition="transition"
         >
           <p>English</p>
-          <div className="movetoggle flex flex-col imtems-center h-20">
-            <p>{t("language")}</p>
+          <div className="movetoggle flex flex-col imtems-center  h-20">
+            <p className="self-center">{t("language")}</p>
             <motion.input
               layout
               transition={{
@@ -137,7 +139,7 @@ const NavigationBar = () => {
                 damping: 30,
               }}
               type="checkbox"
-              className="toggle-button"
+              className="toggle-button self-center"
               checked={isAmharic}
               onChange={toggleLanguage}
             />
