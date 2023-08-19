@@ -27,7 +27,7 @@
 
 }
 .cover-image{
-    background-image: url('./assets/images/persons/testimonials-bg.png');
+    background-image: url('./assets/images/persons/testimonials-bg.webp');
     height: 35rem;
 }
 
@@ -70,7 +70,7 @@ left: 70%;
 /* banner image */
 
 .banner{
-  background-image: url('./assets/images/banner.png');
+  background-image: url('./assets/images/banner.webp');
   width: 100%;
   background-size: cover;
 }
