@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "./../../assets/images/Logo.png";
 import cancel from "./../../assets/images/icons/cancel.svg";
 import hamburger from "./../../assets/images/icons/Frame 86.svg";
+import { motion } from "framer-motion";
 
 const NavigationBar = () => {
   const { t } = useTranslation(); //this is how we access our text
@@ -23,29 +24,41 @@ const NavigationBar = () => {
   };
 
   const navigationLinks = [
-    { textKey: 'home', link: '' },
-    { textKey: 'about', link: '' },
-    { textKey: 'services', link: '' },
-    { textKey: 'events', link: '' },
-    { textKey: 'teams', link: '' },
-    { textKey: 'contact', link: '' },
+    { textKey: "home", link: "" },
+    { textKey: "about", link: "" },
+    { textKey: "services", link: "" },
+    { textKey: "events", link: "" },
+    { textKey: "contact", link: "" },
   ];
-
   return (
     <nav
       className={` ${
         linksVisible ? "bg-white" : "px-2 bg-black"
       } flex flex-col md:flex-row md:justify-between border-solid border-primary border-b px-5 md:px-2 lg:pl-20 xl:pl-20 xl:pr-20 sticky top-[-0.1rem] z-[100]`}
     >
-      <div className="flex justify-between">
-        <img
+      <motion.div
+        className="flex justify-between"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          duration: 2.4,
+          stiffness: 200,
+        }}
+      >
+        <motion.img
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           className={`${
             linksVisible ? "" : "opacity-0 h-0"
           } w-[5rem] md:w-[6rem]`}
           src={logo}
           alt="chains-logo"
         />
-        <img
+        <motion.img
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           className={`md:hidden ${
             linksVisible ? " w-[2rem]" : "w-[1.2rem] m-4"
           }`}
@@ -53,25 +66,44 @@ const NavigationBar = () => {
           alt=""
           onClick={toggleLinks}
         />
-      </div>
+      </motion.div>
       <div
         className={`${
           linksVisible ? "hidden" : "flex max-md:h-screen pt-5"
         } flex-col flex-wrap  items-start pl-10 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg bg-white`}
       >
         {navigationLinks.map((link, index) => (
-        <Link
-          key={index}// You can add a "link" attribute here if needed
-          className="hover:underline hover:text-secondary hover:font-bold"
+          <motion.div
+            className=" border-secondary hover:border-b-[0.2rem]"
+            initial={{ borderBottom: "none", x: "100vw" }}
+            whileHover={{ borderBottom: "#00B9DB 0.2rem solid" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link
+              key={index}
+              className="relative hover:text-secondary hover:font-"
+            >
+              {t(link.textKey)}
+            </Link>
+          </motion.div>
+        ))}
+        <motion.div
+          className="flex items-center gap-3"
+          initial={{ y: "-100vh" }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.2, type: "tween", duration: 1.2 }}
         >
-          {t(link.textKey)}
-        </Link>
-      ))}
-        <div className="flex items-center gap-3">
           <p>English</p>
-          <div className="movetoggle flex flex-col items-center h-20">
+          <div className="movetoggle flex flex-col imtems-center h-20">
             <p>{t("language")}</p>
-            <input
+            <motion.input
+              layout
+              transition={{
+                type: "spring",
+                stiffness: 1000,
+                damping: 30,
+              }}
               type="checkbox"
               className="toggle-button"
               checked={isAmharic}
@@ -79,7 +111,7 @@ const NavigationBar = () => {
             />
           </div>
           <p>አማርኛ</p>
-        </div>
+        </motion.div>
       </div>
     </nav>
   );
