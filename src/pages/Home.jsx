@@ -1,3 +1,4 @@
+import BackToTopBtn from "../assets/components/BackToTopBtn";
 import About from "./home/About";
 import Banner from "./home/Banner";
 import Contacts from "./home/Contact";
@@ -14,20 +15,21 @@ import TopNavBar from "./home/TopNavBar";
 
 export default function Home() {
   return (
-    <>
-      <TopNavBar/>
-      <NavigationBar/>
-      <Banner/>
+    <div className="relative">
+      <TopNavBar />
+      <NavigationBar />
+      <Banner />
       <OurAim />
       <About />
-      <OverViews/>
+      <OverViews />
       <Services />
       {/* <Testimonial /> */}
       <EventsPage />
       {/* <Team/> */}
       <Contacts />
-      <NewsLetter/>
-      <Footer/>
-    </>
+      <NewsLetter />
+      <Footer />
+      <BackToTopBtn />
+    </div>
   );
 }
