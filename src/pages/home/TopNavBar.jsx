@@ -18,20 +18,31 @@ const TopNavBar = () => {
     { name: "TikTok", icon: tiktok, link: "" },
     { name: "YouTube", icon: youtube, link: "" },
   ];
+  const TopNavBarVariants = {
+    infos: {
+      initial: { x: -100, opacity: 0 },
+      animate: { x: 0, opacity: 1 },
+      transition: { delay: 0.2, type: "spring", duration: 2.4, stiffness: 200 },
+      whileHover: { scale: 1.05 },
+    },
+    socials: {
+      initial: { y: -50 },
+      animate: { y: 0 },
+      transition: { duration: 1, type: "spring", stiffness: 300 },
+      whileHover: { scale: 1.2 },
+    },
+  };
+
   return (
     <div className="flex justify-around  align-middle bg-primary text-white font-semibold p-5">
       <div className="flex flex-row justify-between items-center text-xs w-[20rem] lg:w-[25rem] ">
         <motion.div
           className="flex items-center gap-3 cursor-pointer"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            duration: 2.4,
-            stiffness: 200,
-          }}
-          whileHover={{ scale: 1.05 }}
+          variants={TopNavBarVariants.infos}
+          initial="initial"
+          animate="animate"
+          transition="transition"
+          whileHover="whileHover"
         >
           <img
             src={phone}
@@ -42,15 +53,11 @@ const TopNavBar = () => {
         </motion.div>
         <motion.div
           className="flex items-center gap-3 cursor-pointer"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            duration: 2.4,
-            stiffness: 200,
-          }}
-          whileHover={{ scale: 1.05 }}
+          variants={TopNavBarVariants.infos}
+          initial="initial"
+          animate="animate"
+          transition="transition"
+          whileHover="whileHover"
         >
           <img
             src={email}
@@ -64,14 +71,11 @@ const TopNavBar = () => {
         {socialMediaData.map((socialMedia, index) => (
           <Link key={index}>
             <motion.img
-              initial={{ y: -50 }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 1,
-                type: "spring",
-                stiffness: 300,
-              }}
-              whileHover={{ scale: 1.2 }}
+              variants={TopNavBarVariants.socials}
+              initial="initial"
+              animate="animate"
+              transition="transition"
+              whileHover="whileHover"
               className={
                 socialMedia.name === "YouTube" ? "w-[2rem]" : "w-[1.5rem]"
               }

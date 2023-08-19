@@ -30,6 +30,30 @@ const NavigationBar = () => {
     { textKey: "events", link: "" },
     { textKey: "contact", link: "" },
   ];
+  const NavBarVariants = {
+    container: {
+      initial: { x: -100, opacity: 0 },
+      animate: { x: 0, opacity: 1 },
+      transition: { delay: 0.2, type: "spring", duration: 2.4, stiffness: 200 },
+    },
+    images: {
+      initial: { opacity: 0 },
+      whileHover: { scale: 1.1 },
+      animate: { opacity: 1 },
+      transition: { type: "spring", stiffness: 400, damping: 10 },
+    },
+    links: {
+      initial: { y: -80, opacity: 0 },
+      animate: { y: 0, opacity: 1 },
+      transition: { type: "spring", stiffness: 300 },
+      whileHover: { scale: 1.06 },
+    },
+    toogleContainer: {
+      initial: { y: "-100vh", opacity: 0 },
+      animate: { y: 0, opacity: 1 },
+      transition: { delay: 0.2, type: "tween" },
+    },
+  };
   return (
     <nav
       className={` ${
@@ -38,20 +62,17 @@ const NavigationBar = () => {
     >
       <motion.div
         className="flex justify-between"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          type: "spring",
-          duration: 2.4,
-          stiffness: 200,
-        }}
+        variants={NavBarVariants.container}
+        initial="initial"
+        animate="animate"
+        transition="transition"
       >
         <motion.img
-          initial={{ opacity: 0 }}
-          whileHover={{ scale: 1.1 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          variants={NavBarVariants.images}
+          whileHover="whileHover"
+          initial="initial"
+          animate="animate"
+          transition="transition"
           className={`${
             linksVisible ? "" : "opacity-0 h-0"
           } w-[5rem] md:w-[6rem]`}
@@ -59,10 +80,11 @@ const NavigationBar = () => {
           alt="chains-logo"
         />
         <motion.img
-          initial={{ opacity: 0 }}
-          whileHover={{ scale: 1.1 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          variants={NavBarVariants.images}
+          whileHover="whileHover"
+          initial="initial"
+          animate="animate"
+          transition="transition"
           className={`md:hidden ${
             linksVisible ? " w-[2rem]" : "w-[1.2rem] m-4"
           }`}
@@ -78,14 +100,12 @@ const NavigationBar = () => {
       >
         {navigationLinks.map((link, index) => (
           <motion.div
+            variants={NavBarVariants.links}
             className="hover-div relative inline-block  pb-1 cursor-pointer"
-            initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-            }}
-            whileHover={{ scale: 1.06 }}
+            whileHover="whileHover"
+            initial="initial"
+            animate="animate"
+            transition="transition"
           >
             <Link
               key={index}
@@ -101,9 +121,10 @@ const NavigationBar = () => {
         ))}
         <motion.div
           className="flex items-center gap-3"
-          initial={{ y: "-100vh", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "tween" }}
+          variants={NavBarVariants.toogleContainer}
+          initial="initial"
+          animate="animate"
+          transition="transition"
         >
           <p>English</p>
           <div className="movetoggle flex flex-col imtems-center h-20">
