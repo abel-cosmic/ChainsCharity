@@ -74,11 +74,15 @@ const NavigationBar = () => {
       >
         {navigationLinks.map((link, index) => (
           <motion.div
-            className=" border-secondary hover:border-b-[0.2rem]"
-            initial={{ borderBottom: "none", x: "100vw" }}
-            whileHover={{ borderBottom: "#00B9DB 0.2rem solid" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.2 }}
+            className="hover-div relative inline-block  pb-1 cursor-pointer"
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 1,
+              type: "spring",
+              stiffness: 300,
+            }}
+            whileHover={{scale:1.06}}
           >
             <Link
               key={index}
@@ -86,13 +90,16 @@ const NavigationBar = () => {
             >
               {t(link.textKey)}
             </Link>
+            <motion.div className="line absolute bottom-0 left-0 w-0 h-1 bg-secondary transition-width duration-300 ease"
+            transition={{type:"spring"}}
+            ></motion.div>
           </motion.div>
         ))}
         <motion.div
           className="flex items-center gap-3"
           initial={{ y: "-100vh" }}
           animate={{ y: 0 }}
-          transition={{ delay: 0.2, type: "tween", duration: 1.2 }}
+          transition={{ delay: 0.2, type: "tween" }}
         >
           <p>English</p>
           <div className="movetoggle flex flex-col imtems-center h-20">

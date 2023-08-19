@@ -22,55 +22,58 @@
   }
 }
 
-.validate{
+.validate {
   @apply self-start text-[#f00] text-[10px] font-semibold absolute   left-0 lg:bottom-12  max-lg:bottom-10;
-
 }
-.cover-image{
-    background-image: url('./assets/images/persons/testimonials-bg.webp');
-    height: 35rem;
+.cover-image {
+  background-image: url("./assets/images/persons/testimonials-bg.webp");
+  height: 35rem;
 }
 
 /* toggle button */
 .toggle-button {
-    -webkit-appearance: none;
-    position: relative;
-    width: 4rem;
-    height: 2rem;
-    border-radius: 25px;
-    @apply bg-hint;
-    /* transitionbackground: .3s;    */
-    outline: none;
-    cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 25px;
+  @apply bg-hint;
+  /* transitionbackground: .3s;    */
+  outline: none;
+  cursor: pointer;
 }
 
 .toggle-button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    height: 1.45rem;
-    width: 1.45rem;
-    background-color: white;
-    transition: left .3s;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 1.45rem;
+  width: 1.45rem;
+  background-color: white;
+  transition: left 0.3s;
 }
 
 .toggle-button:checked {
-    @apply bg-primary;
+  @apply bg-primary;
 }
 
 .toggle-button:checked::after {
-left: 70%;
+  left: 70%;
 }
 .movetoggle {
-   float: right;
+  float: right;
 }
 /* banner image */
 
-.banner{
-  background-image: url('./assets/images/banner.webp');
+.banner {
+  background-image: url("./assets/images/banner.webp");
   width: 100%;
   background-size: cover;
+}
+
+.hover-div:hover .line {
+  @apply w-full;
 }
