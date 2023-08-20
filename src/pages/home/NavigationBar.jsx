@@ -35,7 +35,13 @@ const NavigationBar = () => {
     animate: {
       x: 0,
       opacity: 1,
-      transition: { delay: 1, type: "spring", duration: 2.4, stiffness: 200 ,when:"afterChildren"},
+      transition: {
+        delay: 1,
+        type: "spring",
+        stiffness: 200,
+        staggerChildren: 0.4,
+        duration: 0.2,
+      },
     },
   };
   const images = {
@@ -91,7 +97,10 @@ const NavigationBar = () => {
           onClick={toggleLinks}
         />
       </motion.div>
-      <div
+      <motion.div
+        variants={links}
+        animate="animate"
+        initial="initial"
         className={`${
           linksVisible ? "hidden" : "flex max-md:h-screen pt-5"
         } flex-col flex-wrap  items-start pl-10 gap-5 md:pl-0 md:flex md:flex-row lg:gap-8 font-semibold md:items-center text-sm lg:text-lg bg-white`}
@@ -99,8 +108,6 @@ const NavigationBar = () => {
         {navigationLinks.map((link, index) => (
           <motion.div
             variants={links}
-            initial="initial"
-            animate="animate"
             className="hover-div relative inline-block  pb-1 cursor-pointer"
             whileHover="whileHover"
           >
@@ -140,7 +147,7 @@ const NavigationBar = () => {
           </div>
           <p>አማርኛ</p>
         </motion.div>
-      </div>
+      </motion.div>
     </nav>
   );
 };
