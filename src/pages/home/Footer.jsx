@@ -8,7 +8,7 @@ import facebook from "./../../assets/images/social medias/facebook.svg";
 import linkedin from "./../../assets/images/social medias/linkedin.svg";
 import tiktok from "./../../assets/images/social medias/tiktok.svg";
 import youtube from "./../../assets/images/social medias/youtube.svg";
-import { motion } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -47,9 +47,24 @@ const Footer = () => {
   ];
   const socials = {
     initial: { y: -50 },
-    animate: { y: 0 },
-    transition: { duration: 1, type: "spring", stiffness: 300 },
+    animate: {
+      y: 0,
+      transition: { duration: 1, type: "spring", stiffness: 300 },
+    },
+
     whileHover: { scale: 1.2 },
+  };
+  const linkers = {
+    initial: { y: -50, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.4,
+        duration: 0.2,
+      },
+    },
   };
   return (
     <footer>
@@ -60,36 +75,48 @@ const Footer = () => {
             whileHover="whileHover"
             initial="initial"
             animate="animate"
-            transition="transition"
             className="w-[10rem]"
             src={logo}
             alt="chains-logo"
           />
-          <address className="text-sm md:text-md">
-            <p>123 Main Street</p>
-            <p>City, State ZIP</p>
-            <p>Country</p>
-            <p className="font-semibold">
+          <motion.address
+            variants={linkers}
+            initial="initial"
+            animate="animate"
+            className="text-sm md:text-md"
+          >
+            <motion.p variants={linkers}>123 Main Street</motion.p>
+            <motion.p variants={linkers}>City, State ZIP</motion.p>
+            <motion.p variants={linkers}>Country</motion.p>
+            <motion.p variants={linkers} className="font-semibold">
               Email:{" "}
               <a href="mailto:info@example.com" className="font-normal">
                 info@example.com
               </a>
-            </p>
-            <p className="font-semibold">
+            </motion.p>
+            <motion.p variants={linkers} className="font-semibold">
               Phone:{" "}
               <a href="tel:+1234567890" className="font-normal">
                 123-456-7890
               </a>
-            </p>
-          </address>
+            </motion.p>
+          </motion.address>
         </div>
-        <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">
+        <motion.div
+          variants={linkers}
+          initial="initial"
+          animate="animate"
+          className="mt-5 leading-7 "
+        >
+          <motion.h1
+            variants={linkers}
+            className="font-bold text-footer mb-2 text-sm"
+          >
             {t("footer-usefull-links")}
-          </h1>
-          <ul>
+          </motion.h1>
+          <ul className="flex flex-col gap-2">
             {linkPack1.map((item) => (
-              <li>
+              <motion.li variants={linkers}>
                 <Link
                   to={item.link}
                   className="hover:underline hover:text-secondary hover:font-semibold flex text-xs"
@@ -101,17 +128,25 @@ const Footer = () => {
                   />
                   {item.text}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
-        <div className="mt-5 leading-7 ">
-          <h1 className="font-bold text-footer mb-2 text-sm">
+        </motion.div>
+        <motion.div
+          variants={linkers}
+          initial="initial"
+          animate="animate"
+          className="mt-5 leading-7 "
+        >
+          <motion.h1
+            variants={linkers}
+            className="font-bold text-footer mb-2 text-sm"
+          >
             {t("footer-our-services")}
-          </h1>
-          <ul className="flex flex-col gap-2 ">
+          </motion.h1>
+          <motion.ul variants={linkers} className="flex flex-col gap-2 ">
             {linkPack2.map((item) => (
-              <li>
+              <motion.li variants={linkers}>
                 <Link
                   to={item.link}
                   className="hover:underline hover:text-secondary  flex text-xs"
@@ -123,23 +158,35 @@ const Footer = () => {
                   />
                   <p>{item.text}</p>
                 </Link>
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
-        <div className="mt-5 flex flex-col gap-2 ">
-          <h1 className="font-bold text-footer text-sm">
+          </motion.ul>
+        </motion.div>
+        <motion.div
+          variants={linkers}
+          initial="initial"
+          animate="animate"
+          className="mt-5 flex flex-col gap-2 "
+        >
+          <motion.h1
+            variants={linkers}
+            className="font-bold text-footer text-sm"
+          >
             {t("footer-our-social-networks")}
-          </h1>
-          <p className="text-xs">{t("footer-our-sn-text")}</p>
-          <div className="flex gap-4 sm:gap-12 md:gap-5 items-center">
+          </motion.h1>
+          <motion.p variants={linkers} className="text-xs">
+            {t("footer-our-sn-text")}
+          </motion.p>
+          <motion.div
+            variants={linkers}
+            className="flex gap-4 sm:gap-12 md:gap-5 items-center"
+          >
             {socialMediaLinks.map((socialMedia, index) => (
               <Link key={index} to={socialMedia.link}>
                 <motion.div
                   variants={socials}
                   initial="initial"
                   animate="animate"
-                  transition="transition"
                   whileHover="whileHover"
                   className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
                 >
@@ -151,8 +198,8 @@ const Footer = () => {
                 </motion.div>
               </Link>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
       <div className="bg-primary bg-opacity-5 px-5 py-10 flex flex-col gap-4 md:flex-row md:justify-evenly">
         <p>

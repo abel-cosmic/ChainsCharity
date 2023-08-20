@@ -35,7 +35,7 @@ const NavigationBar = () => {
     animate: {
       x: 0,
       opacity: 1,
-      transition: { delay: 1, type: "spring", duration: 2.4, stiffness: 200 },
+      transition: { delay: 1, type: "spring", duration: 2.4, stiffness: 200 ,when:"afterChildren"},
     },
   };
   const images = {
