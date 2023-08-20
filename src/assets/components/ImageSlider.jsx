@@ -49,17 +49,12 @@ const ImageSlider = ({ images }) => {
                 overflow: "hidden",
               }}
             >
-              <AnimatePresence>
-                <motion.img
-                  key={image.src}
-                  initial={{ opacity: 0, y: 200 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  src={image}
-                  alt={`Image ${index}`}
-                  className="w-full h-full object-cover max-md:h-44 "
-                />
-              </AnimatePresence>
+              <img
+                key={image.src}
+                src={image}
+                alt={`Image ${index}`}
+                className="w-full h-full object-cover max-md:h-44 "
+              />
             </div>
           ))}
         </div>
