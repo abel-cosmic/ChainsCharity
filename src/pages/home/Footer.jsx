@@ -65,6 +65,7 @@ const Footer = () => {
         duration: 0.2,
       },
     },
+    whileHover: { scale: 1.1 },
   };
   return (
     <footer>
@@ -116,7 +117,7 @@ const Footer = () => {
           </motion.h1>
           <ul className="flex flex-col gap-2">
             {linkPack1.map((item) => (
-              <motion.li variants={linkers}>
+              <motion.li variants={linkers} whileHover="whileHover">
                 <Link
                   to={item.link}
                   className="hover:underline hover:text-secondary hover:font-semibold flex text-xs"
@@ -146,7 +147,7 @@ const Footer = () => {
           </motion.h1>
           <motion.ul variants={linkers} className="flex flex-col gap-2 ">
             {linkPack2.map((item) => (
-              <motion.li variants={linkers}>
+              <motion.li variants={linkers} whileHover="whileHover">
                 <Link
                   to={item.link}
                   className="hover:underline hover:text-secondary  flex text-xs"
