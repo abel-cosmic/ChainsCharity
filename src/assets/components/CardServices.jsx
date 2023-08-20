@@ -1,9 +1,19 @@
-import earth from "./../images/icons/Group (2).svg";
 import { useState } from "react";
+import { motion } from "framer-motion";
 const CardServices = ({ image, heading, description }) => {
   const [isHovered, setHovered] = useState(false);
+  const title = {
+    initial: { scaleX: 0, scaleY: 0, opacity: 0 },
+    animate: { scaleX: 1, scaleY: 1, opacity: 1 },
+    whileHover: { scale: 1.05 },
+  };
   return (
-    <div
+    <motion.div
+      variants={title}
+      animate="animate"
+      transition="transition"
+      initial="initial"
+      whileHover="whileHover"
       className="transition-all border-[0.1rem] border-primary border-solid flex flex-col items-center px-28 w-[42rem] h-[20rem] py-16 max-md:py-8 max-md:px-14 rounded gap-4 max-md:gap-2 hover:shadow-blue max-md:flex max-md:flex-col max-md:w-full cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -27,7 +37,7 @@ const CardServices = ({ image, heading, description }) => {
       <p className="font-semibold text-md text-center max-md:text-sm">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
