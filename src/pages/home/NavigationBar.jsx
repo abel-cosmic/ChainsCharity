@@ -73,7 +73,7 @@ const NavigationBar = () => {
           variants={NavBarVariants.images}
           whileHover="whileHover"
           initial="initial"
-          animate={`animate ${linksVisible ? "open" : "closed"}`}
+          animate="animate"
           transition="transition"
           className={`${
             linksVisible ? "" : "opacity-0 h-0"
