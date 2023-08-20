@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const CardForm = () => {
   const { t } = useTranslation();
@@ -27,7 +28,7 @@ const CardForm = () => {
       errors.subject = t("required");
     }
     if (!values.message) {
-      errors.message =  t("required");
+      errors.message = t("required");
     }
     return errors;
   };
@@ -42,8 +43,26 @@ const CardForm = () => {
   const formattedMessage = message
     .split("\n")
     .map((text, index) => <p key={index}>{text}</p>);
+
+  const variants = {
+    initial: { scaleX: 0, scaleY: 0, opacity: 0 },
+    animate: {
+      scaleX: 1,
+      scaleY: 1,
+      opacity: 1,
+      transition: { delay: 1, duration: 1.2 },
+    },
+    whileFocus:{ }
+  };
+  const inputs = {
+    whileFocus :{scale:1.4}
+  }
   return (
-    <form
+    <motion.form
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      whileFocus="whileFocus"
       onSubmit={formik.handleSubmit}
       className="w-full shadow-cust flex flex-col  gap-10 items-center p-10  max-md:p-4 max-md:w-full max-lg:gap-8 max-lg:text-sm"
     >
@@ -52,7 +71,8 @@ const CardForm = () => {
           {formik.touched.name && formik.errors.name ? (
             <div className="validate">{formik.errors.name}</div>
           ) : null}
-          <input
+          <motion.input
+          variants={inputs}
             type="text"
             placeholder={t("your-name")}
             name="name"
@@ -67,7 +87,8 @@ const CardForm = () => {
           {formik.touched.email && formik.errors.email ? (
             <div className="validate">{formik.errors.email}</div>
           ) : null}
-          <input
+          <motion.input
+          variants={inputs}
             type="email"
             placeholder={t("your-email")}
             name="email"
@@ -84,7 +105,8 @@ const CardForm = () => {
           {formik.touched.subject && formik.errors.subject ? (
             <div className="validate">{formik.errors.subject}</div>
           ) : null}
-          <input
+          <motion.input
+          variants={inputs}
             type="text"
             placeholder={t("subject")}
             name="subject"
@@ -101,7 +123,8 @@ const CardForm = () => {
               {formik.errors.message}
             </div>
           ) : null}
-          <textarea
+          <motion.textarea
+          variants={inputs}
             type="text"
             placeholder={t("message")}
             name="message"
@@ -119,7 +142,7 @@ const CardForm = () => {
         value={t("send-message")}
         className="bg-primary cursor-pointer bg-opacity-90 text-white px-10 py-2 rounded hover:bg-opacity-100 max-md:self-start max-lg:text-sm"
       />
-    </form>
+    </motion.form>
   );
 };
 export default CardForm;
