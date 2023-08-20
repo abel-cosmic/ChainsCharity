@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const StatisticsCard = ({ stat }) => {
     const [number, setNumber] = useState(0);
-    const countUpSeconds = stat.number > 300 ? 500 : 2000;
+    const countUpSeconds = stat.number > 300 ? 500 : 5000;
     const incrementRate = countUpSeconds / stat.number;
     // {console.log(incrementRate, countUpSeconds, stat.number)}   
     useEffect(() => {
