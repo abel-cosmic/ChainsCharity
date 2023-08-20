@@ -118,6 +118,8 @@ const NavigationBar = () => {
         ))}
         <motion.div
           className="flex items-center gap-3"
+          initial="initial"
+          animate="animate"
           variants={toogleContainer}
         >
           <p>English</p>
