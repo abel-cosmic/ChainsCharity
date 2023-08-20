@@ -28,7 +28,12 @@ const Contacts = () => {
   ];
   return (
     <div className="flex flex-col items-center gap-10 py-10 max-md:py-5">
-      <div className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:gap-2 max-md:w-full max-md:px-2">
+      <motion.div
+        initial={{ x: "-100vw", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 1, duration: 1.2 }}
+        className="flex flex-col  w-[40rem] items-center justify-center gap-6 max-md:gap-2 max-md:w-full max-md:px-2"
+      >
         <PlaceHolder text={t("contact")} />
         <h1 className="font-bold text-3xl max-md:text-xl">
           {t("contact-with-this") + " "}
@@ -37,7 +42,7 @@ const Contacts = () => {
         <p className="font-medium text-center  max-md:text-sm max-md:flex max-md:flex-col max-md:w-full">
           {t("contact-quote")}
         </p>
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-10 max-md:gap-5">
         <div className="flex flex-row gap-8 max-lg:flex-col max-lg:gap-4">
           <div className="w-[50%] max-lg:w-full">
