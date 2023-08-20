@@ -8,6 +8,7 @@ import facebook from "./../../assets/images/social medias/facebook.svg";
 import linkedin from "./../../assets/images/social medias/linkedin.svg";
 import tiktok from "./../../assets/images/social medias/tiktok.svg";
 import youtube from "./../../assets/images/social medias/youtube.svg";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -44,12 +45,27 @@ const Footer = () => {
     { icon: tiktok, alt: "ticktok-icon", size: "w-[1rem] sm:w-6", link: "" },
     { icon: youtube, alt: "youtube-icon", size: "w-[1.5rem] sm:w-8", link: "" },
   ];
+  const socials = {
+    initial: { y: -50 },
+    animate: { y: 0 },
+    transition: { duration: 1, type: "spring", stiffness: 300 },
+    whileHover: { scale: 1.2 },
+  };
   return (
     <footer>
       <div className="flex flex-col px-5 pb-5 md:flex-row md:gap-10 flex-wrap md:justify-evenly lg:px-20 md:flex-nowrap">
         <div className="">
-          <img className="w-[10rem]" src={logo} alt="chains-logo" />
-          <address className="text-xs md:text-md">
+          <motion.img
+            variants={socials}
+            whileHover="whileHover"
+            initial="initial"
+            animate="animate"
+            transition="transition"
+            className="w-[10rem]"
+            src={logo}
+            alt="chains-logo"
+          />
+          <address className="text-sm md:text-md">
             <p>123 Main Street</p>
             <p>City, State ZIP</p>
             <p>Country</p>
@@ -118,16 +134,21 @@ const Footer = () => {
           <p className="text-xs">{t("footer-our-sn-text")}</p>
           <div className="flex gap-4 sm:gap-12 md:gap-5 items-center">
             {socialMediaLinks.map((socialMedia, index) => (
-              <Link
-                key={index}
-                to={socialMedia.link}
-                className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
-              >
-                <img
-                  className={socialMedia.size}
-                  src={socialMedia.icon}
-                  alt={socialMedia.alt}
-                />
+              <Link key={index} to={socialMedia.link}>
+                <motion.div
+                  variants={socials}
+                  initial="initial"
+                  animate="animate"
+                  transition="transition"
+                  whileHover="whileHover"
+                  className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
+                >
+                  <img
+                    className={socialMedia.size}
+                    src={socialMedia.icon}
+                    alt={socialMedia.alt}
+                  />
+                </motion.div>
               </Link>
             ))}
           </div>
@@ -141,7 +162,9 @@ const Footer = () => {
         </p>
         <p>
           {t("footer-designed-by") + " "}
-          <span className="text-primary font-bold">Tridents Technologies</span>
+          <span className="text-primary font-bold cursor-pointer">
+            <Link className="hover:scale-150">Tridents Technologies</Link>
+          </span>
         </p>
       </div>
     </footer>

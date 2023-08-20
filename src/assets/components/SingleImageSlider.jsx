@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import right_arrow from "./../images/icons/Frame 35 (1).png";
 import left_arrow from "./../images/icons/Frame 35.png";
 import SliderButton from "./SliderButton";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -98,9 +98,10 @@ const SingleImageSlider = ({ sliders, Component, sliderButtons }) => {
         </div>
       )}
       {
-        <div className="flex items-center justify-center mt-4">
+        <div className="flex items-center justify-center mt-2 h-fit">
           {sliders.map((_, index) => (
-            <div
+            <motion.div
+            whileHover={{scale:1.3,translateY:-2}}
               key={index}
               className={`h-4 w-4 max-lg:w-2 max-lg:h-2 max-lg:mx-1 rounded-full ${
                 index === currentSlide ? "bg-primary" : "bg-gray-500"

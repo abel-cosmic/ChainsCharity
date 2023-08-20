@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SliderButton from "./SliderButton";
 import right_arrow from "./../images/icons/Frame 35 (1).png";
 import left_arrow from "./../images/icons/Frame 35.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ImageSlider = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -18,7 +18,11 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center relative overflow-hidden ">
+    <motion.div
+    initial={{x:"100vw",opacity:0}}
+    animate={{x:0,opacity:1}}
+    transition={{delay:1}}
+    className="w-full flex flex-col items-center relative overflow-hidden ">
       <div className="flex flex-row w-full relative overflow-hidden items-center justify-center">
         <div className="flex items-center justify-between absolute top-1/2 transform -translate-y-1/2 w-full z-50">
           <SliderButton
@@ -59,10 +63,11 @@ const ImageSlider = ({ images }) => {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center mt-4">
+      <div className="flex items-center justify-center mt-2">
         {images.map((_, index) => (
-          <div
+          <motion.div
             key={index}
+            whileHover={{ scale: 1.3, translateY: -2 }}
             className={`h-4 w-4 max-lg:w-2 max-lg:h-2 max-lg:mx-1 rounded-full ${
               index === currentImageIndex ? "bg-primary" : "bg-gray-500"
             } mx-2 cursor-pointer`}
@@ -70,7 +75,7 @@ const ImageSlider = ({ images }) => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

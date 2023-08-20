@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const StatisticsCard = ({ stat }) => {
     const [number, setNumber] = useState(0);
@@ -16,11 +17,18 @@ const StatisticsCard = ({ stat }) => {
     }, []); // Empty dependency array ensures this effect runs only once
   
   return (
-    <div className="text-black bg-primary bg-opacity-10 mt-10 pb-5 flex flex-col w-full md:w-80 lg:w-1/4 items-center gap-3" key={stat.id}>
+    <motion.div 
+    initial={{scaleX:0,scaleY:0,opacity:0}}
+    animate={{scaleX:1,scaleY:1,opacity:1}}
+    transition={{delay:1}}
+    className="text-black bg-primary bg-opacity-10 mt-10 pb-5 flex flex-col w-full md:w-80 lg:w-1/4 items-center gap-3" key={stat.id}>
       <img src={stat.image} alt={stat.alt} className="w-20 mt-[-2rem] " />
-      <p className="font-semibold text-2xl">{number}</p>
+      <motion.p 
+      initial={{speed:0.8}}
+      animate={{speed:1}}
+      className="font-semibold text-2xl">{number}</motion.p>
       <p className=" text-2xl">{stat.title}</p>
-    </div>
+    </motion.div>
   );
 };
 

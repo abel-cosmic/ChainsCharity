@@ -8,7 +8,7 @@ const Banner = () => {
     container: {
       initial: { x: "-100vw", opacity: 0 },
       animate: { x: 0, opacity: 1 },
-      transition: { delay: 0.2, type: "spring", duration: 0.4, stiffness: 100 },
+      transition: { delay: 1, type: "spring", duration: 0.4, stiffness: 100 },
     },
     button: {
       whileHover: { scale: 1.05 },
