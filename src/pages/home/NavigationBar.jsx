@@ -118,7 +118,8 @@ const NavigationBar = () => {
               smooth
               spy
               to={link.textKey}
-              offset={-50}
+              offset={linksVisible ? -50 : -810}
+              onClick={() => setLinksVisible(true)}
             >
               {t(link.textKey)}
             </Link>

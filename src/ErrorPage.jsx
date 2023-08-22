@@ -20,7 +20,7 @@ export default function ErrorPage() {
             </p>
           </div>
           <Link to="/">
-            <button className="bg-primary bg-opacity-90 text-white px-10 py-2 flex flex-row items-center gap-2 rounded hover:bg-opacity-100 w-fit max-lg:w-full">
+            <button className="bg-primary bg-opacity-90 text-white px-10 py-2 flex flex-row items-center gap-2 rounded hover:bg-opacity-100 w-fit max-lg:w-full max-md:mb-5">
               <img src={arrow} alt="arrow" />
               <p>Back to home</p>
             </button>

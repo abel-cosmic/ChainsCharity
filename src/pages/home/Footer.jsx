@@ -26,12 +26,12 @@ const Footer = ({ variant }) => {
     "text-white",
   ];
   const linkPack1 = [
-    { text: t("home") },
-    { text: t("about") },
-    { text: t("services") },
-    { text: t("events") },
-    { text: t("teams") },
-    { text: t("contact") },
+    { text: "home" },
+    { text: "about" },
+    { text: "services" },
+    { text: "events" },
+    { text: "teams" },
+    { text: "contact" },
   ];
   const linkPack2 = [
     { link: "", text: t("footer-s-eei") },
@@ -187,7 +187,7 @@ const Footer = ({ variant }) => {
                     src={arrow}
                     alt="arrow-icon"
                   />
-                  {item.text}
+                  {t(item.text)}
                 </Link>
               </motion.li>
             ))}
