@@ -118,6 +118,7 @@ const NavigationBar = () => {
               smooth
               spy
               to={link.textKey}
+              offset={-50}
             >
               {t(link.textKey)}
             </Link>
