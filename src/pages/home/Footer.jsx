@@ -8,9 +8,16 @@ import facebook from "./../../assets/images/social medias/facebook.svg";
 import linkedin from "./../../assets/images/social medias/linkedin.svg";
 import tiktok from "./../../assets/images/social medias/tiktok.svg";
 import youtube from "./../../assets/images/social medias/youtube.svg";
+import twitter2 from "./../../assets/images/social medias/twitter (1).svg";
+import instagram2 from "./../../assets/images/social medias/instagram (1).svg";
+import facebook2 from "./../../assets/images/social medias/social medias.svg";
+import linkedin2 from "./../../assets/images/social medias/linkedin (1).svg";
+import tiktok2 from "./../../assets/images/social medias/tiktok (1).svg";
+import youtube2 from "./../../assets/images/social medias/youtube (1).svg";
 import { motion, stagger } from "framer-motion";
+import { useState } from "react";
 
-const Footer = () => {
+const Footer = ({ variant }) => {
   const { t } = useTranslation();
 
   const secondary = [
@@ -45,6 +52,34 @@ const Footer = () => {
     { icon: tiktok, alt: "ticktok-icon", size: "w-[1rem] sm:w-6", link: "" },
     { icon: youtube, alt: "youtube-icon", size: "w-[1.5rem] sm:w-8", link: "" },
   ];
+  const lightSocial = [
+    { icon: twitter2, alt: "twitter-icon", size: "w-[1rem] sm:w-6", link: "" },
+    {
+      icon: instagram2,
+      alt: "instagram-icon",
+      size: "w-[1rem] sm:w-6",
+      link: "",
+    },
+    {
+      icon: facebook2,
+      alt: "facebook-icon",
+      size: "w-[1rem] sm:w-6",
+      link: "",
+    },
+    {
+      icon: linkedin2,
+      alt: "linkedin-icon",
+      size: "w-[1rem] sm:w-6",
+      link: "",
+    },
+    { icon: tiktok2, alt: "ticktok-icon", size: "w-[1rem] sm:w-6", link: "" },
+    {
+      icon: youtube2,
+      alt: "youtube-icon",
+      size: "w-[1.5rem] sm:w-8",
+      link: "",
+    },
+  ];
   const socials = {
     initial: { y: -50 },
     animate: {
@@ -67,16 +102,32 @@ const Footer = () => {
     },
     whileHover: { scale: 1.1 },
   };
+  const ReturnDesign = (value) => {
+    if (value === "blue") {
+      return "bg-primary text-white"; // Apply blue variation styles
+    } else if (value === "white") {
+      return "bg-transparent text-primary"; // Apply white variation styles
+    } else {
+      return ""; // Default variation styles
+    }
+  };
+  const imageholder = "bg-[#fff]";
   return (
     <footer>
-      <div className="flex flex-col px-5 pb-5 md:flex-row md:gap-10 flex-wrap md:justify-evenly lg:px-20 md:flex-nowrap">
+      <div
+        className={`flex flex-col px-5 pb-5 md:flex-row md:gap-10 flex-wrap md:justify-evenly lg:px-20 md:flex-nowrap ${ReturnDesign(
+          variant
+        )}`}
+      >
         <div className="">
           <motion.img
             variants={socials}
             whileHover="whileHover"
             initial="initial"
             animate="animate"
-            className="w-[10rem]"
+            className={`w-[10rem] my-2 ${
+              variant === "blue" ? imageholder : ""
+            }`}
             src={logo}
             alt="chains-logo"
           />
@@ -109,9 +160,12 @@ const Footer = () => {
           animate="animate"
           className="mt-5 leading-7 "
         >
+          {/** apply header to this area */}
           <motion.h1
             variants={linkers}
-            className="font-bold text-footer mb-2 text-sm"
+            className={`font-bold mb-2 text-sm ${
+              variant === "blue" ? "text-white" : "text-footer "
+            }`}
           >
             {t("footer-usefull-links")}
           </motion.h1>
@@ -120,7 +174,11 @@ const Footer = () => {
               <motion.li variants={linkers} whileHover="whileHover">
                 <Link
                   to={item.link}
-                  className="hover:underline hover:text-secondary hover:font-semibold flex text-xs"
+                  className={`hover:underline   flex text-xs ${
+                    variant === "blue"
+                      ? "hover:no-underline "
+                      : "hover:text-secondary"
+                  }`}
                 >
                   <img
                     className="mr-5 md:mr-2 w-[0.3rem]"
@@ -139,9 +197,12 @@ const Footer = () => {
           animate="animate"
           className="mt-5 leading-7 "
         >
+          {/** apply header to this area */}
           <motion.h1
             variants={linkers}
-            className="font-bold text-footer mb-2 text-sm"
+            className={`font-bold mb-2 text-sm ${
+              variant === "blue" ? "text-white" : "text-footer "
+            }`}
           >
             {t("footer-our-services")}
           </motion.h1>
@@ -150,7 +211,11 @@ const Footer = () => {
               <motion.li variants={linkers} whileHover="whileHover">
                 <Link
                   to={item.link}
-                  className="hover:underline hover:text-secondary  flex text-xs"
+                  className={`hover:underline   flex text-xs ${
+                    variant === "blue"
+                      ? "hover:no-underline "
+                      : "hover:text-secondary"
+                  }`}
                 >
                   <img
                     className="mr-5 md:mr-2 w-[0.3rem]"
@@ -169,9 +234,12 @@ const Footer = () => {
           animate="animate"
           className="mt-5 flex flex-col gap-2 "
         >
+          {/** apply header to this area */}
           <motion.h1
             variants={linkers}
-            className="font-bold text-footer text-sm"
+            className={`font-bold mb-2 text-sm ${
+              variant === "blue" ? "text-white" : "text-footer "
+            }`}
           >
             {t("footer-our-social-networks")}
           </motion.h1>
@@ -182,23 +250,41 @@ const Footer = () => {
             variants={linkers}
             className="flex gap-4 sm:gap-12 md:gap-5 items-center"
           >
-            {socialMediaLinks.map((socialMedia, index) => (
-              <Link key={index} to={socialMedia.link}>
-                <motion.div
-                  variants={socials}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="whileHover"
-                  className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
-                >
-                  <img
-                    className={socialMedia.size}
-                    src={socialMedia.icon}
-                    alt={socialMedia.alt}
-                  />
-                </motion.div>
-              </Link>
-            ))}
+            {(variant === "white") | ""
+              ? socialMediaLinks.map((socialMedia, index) => (
+                  <Link key={index} to={socialMedia.link}>
+                    <motion.div
+                      variants={socials}
+                      initial="initial"
+                      animate="animate"
+                      whileHover="whileHover"
+                      className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
+                    >
+                      <img
+                        className={socialMedia.size}
+                        src={socialMedia.icon}
+                        alt={socialMedia.alt}
+                      />
+                    </motion.div>
+                  </Link>
+                ))
+              : lightSocial.map((socialMedia, index) => (
+                  <Link key={index} to={socialMedia.link}>
+                    <motion.div
+                      variants={socials}
+                      initial="initial"
+                      animate="animate"
+                      whileHover="whileHover"
+                      className="bg-[#fff] p-2 rounded-lg  sm:p3"
+                    >
+                      <img
+                        className={socialMedia.size}
+                        src={socialMedia.icon}
+                        alt={socialMedia.alt}
+                      />
+                    </motion.div>
+                  </Link>
+                ))}
           </motion.div>
         </motion.div>
       </div>

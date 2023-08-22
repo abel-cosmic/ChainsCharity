@@ -49,7 +49,7 @@ export default function Home() {
         <Contacts />
       </AnimateComponents>
       <AnimateComponents>
-        <Footer />
+        <Footer variant="white"/>
       </AnimateComponents>
       <AnimateComponents>
         <BackToTopBtn />
