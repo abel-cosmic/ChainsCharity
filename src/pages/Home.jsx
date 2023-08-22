@@ -20,9 +20,9 @@ export default function Home() {
       <AnimateComponents>
         <TopNavBar />
       </AnimateComponents>
-      <AnimateComponents>
-        <NavigationBar />
-      </AnimateComponents>
+
+      <NavigationBar />
+
       <AnimateComponents>
         <Banner />
       </AnimateComponents>
