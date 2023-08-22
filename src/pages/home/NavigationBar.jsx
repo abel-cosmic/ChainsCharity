@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import logo from "./../../assets/images/Logo.png";
 import cancel from "./../../assets/images/icons/cancel.svg";
 import hamburger from "./../../assets/images/icons/Frame 86.svg";
@@ -24,11 +24,11 @@ const NavigationBar = () => {
   };
 
   const navigationLinks = [
-    { textKey: "home", link: "" },
-    { textKey: "about", link: "" },
-    { textKey: "services", link: "" },
-    { textKey: "events", link: "" },
-    { textKey: "contact", link: "" },
+    { textKey: "home" },
+    { textKey: "about" },
+    { textKey: "services" },
+    { textKey: "events" },
+    { textKey: "contact" },
   ];
   const container = {
     initial: { x: -100, opacity: 0 },
@@ -114,6 +114,12 @@ const NavigationBar = () => {
             <Link
               key={index}
               className="relative hover:text-secondary hover:font-"
+              ctiveClass="active"
+              smooth
+              spy
+              to={link.textKey}
+              offset={linksVisible ? -50 : -810}
+              onClick={() => setLinksVisible(true)}
             >
               {t(link.textKey)}
             </Link>

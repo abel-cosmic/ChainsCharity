@@ -17,7 +17,7 @@ const Banner = () => {
     },
   };
   return (
-    <section className="banner  bg-no-repeat">
+    <section className="banner  bg-no-repeat" id="home">
       <motion.div
         variants={BannerVariants.container}
         initial="initial"
