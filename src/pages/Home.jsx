@@ -20,9 +20,9 @@ export default function Home() {
       <AnimateComponents>
         <TopNavBar />
       </AnimateComponents>
-      <AnimateComponents>
-        <NavigationBar/>
-      </AnimateComponents>
+
+      <NavigationBar />
+
       <AnimateComponents>
         <Banner />
       </AnimateComponents>
@@ -49,7 +49,7 @@ export default function Home() {
         <Contacts />
       </AnimateComponents>
       <AnimateComponents>
-        <Footer />
+        <Footer variant="white"/>
       </AnimateComponents>
       <AnimateComponents>
         <BackToTopBtn />
