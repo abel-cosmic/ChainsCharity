@@ -34,7 +34,10 @@ export default function Services() {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-20 py-10 px-4 justify-center max-md:gap-10">
+    <div
+      className="flex flex-col items-center gap-20 py-10 px-4 justify-center max-md:gap-10"
+      id="services"
+    >
       <PlaceHolder text={t("services")} />
       <div className="flex flex-row flex-wrap gap-32 max-lg:gap-6 items-center justify-center">
         {services.map((service) => (

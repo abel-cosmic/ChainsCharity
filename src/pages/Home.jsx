@@ -21,7 +21,7 @@ export default function Home() {
         <TopNavBar />
       </AnimateComponents>
       <AnimateComponents>
-        <NavigationBar />
+        <NavigationBar/>
       </AnimateComponents>
       <AnimateComponents>
         <Banner />
