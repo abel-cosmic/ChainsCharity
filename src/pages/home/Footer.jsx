@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import logo from "./../../assets/images/Logo.png";
 import arrow from "./../../assets/images/icons/Vector (6).svg";
@@ -26,12 +26,12 @@ const Footer = ({ variant }) => {
     "text-white",
   ];
   const linkPack1 = [
-    { link: "", text: t("home") },
-    { link: "", text: t("about") },
-    { link: "", text: t("services") },
-    { link: "", text: t("events") },
-    { link: "", text: t("teams") },
-    { link: "", text: t("contact") },
+    { text: "home" },
+    { text: "about" },
+    { text: "services" },
+    { text: "events" },
+    { text: "teams" },
+    { text: "contact" },
   ];
   const linkPack2 = [
     { link: "", text: t("footer-s-eei") },
@@ -173,7 +173,9 @@ const Footer = ({ variant }) => {
             {linkPack1.map((item) => (
               <motion.li variants={linkers} whileHover="whileHover">
                 <Link
-                  to={item.link}
+                  to={item.text}
+                  smooth
+                  spy
                   className={`hover:underline   flex text-xs ${
                     variant === "blue"
                       ? "hover:no-underline "
@@ -185,7 +187,7 @@ const Footer = ({ variant }) => {
                     src={arrow}
                     alt="arrow-icon"
                   />
-                  {item.text}
+                  {t(item.text)}
                 </Link>
               </motion.li>
             ))}

@@ -16,6 +16,7 @@ const EventsPage = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
       className="flex flex-col items-center py-10 gap-10 max-md:gap-6"
+      id="events"
     >
       <motion.div
         initial={{ x: "-100vw", opacity: 0 }}

@@ -27,7 +27,10 @@ const Contacts = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-10 py-10 max-md:py-5">
+    <div
+      className="flex flex-col items-center gap-10 py-10 max-md:py-5"
+      id="contact"
+    >
       <motion.div
         initial={{ x: "-100vw", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

@@ -27,7 +27,10 @@ const About = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center py-10 gap-4 bg-secondary bg-opacity-5 max-md:gap-10">
+    <div
+      className="flex flex-col items-center py-10 gap-4 bg-secondary bg-opacity-5 max-md:gap-10"
+      id="about"
+    >
       <motion.div
         initial={{ x: "-100vw", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
