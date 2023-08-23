@@ -176,7 +176,7 @@ const Footer = ({ variant }) => {
                   to={item.text}
                   smooth
                   spy
-                  className={`hover:underline   flex text-xs ${
+                  className={`hover:underline cursor-pointer  flex text-xs ${
                     variant === "blue"
                       ? "hover:no-underline "
                       : "hover:text-secondary"
@@ -214,7 +214,7 @@ const Footer = ({ variant }) => {
         animate="animate" whileHover="whileHover">
                 <Link
                   to={item.link}
-                  className={`hover:underline   flex text-xs ${
+                  className={`hover:underline cursor-pointer  flex text-xs ${
                     variant === "blue"
                       ? "hover:no-underline "
                       : "hover:text-secondary"
@@ -261,7 +261,7 @@ const Footer = ({ variant }) => {
                       initial="initial"
                       animate="animate"
                       whileHover="whileHover"
-                      className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover sm:p3"
+                      className="bg-primary p-2 rounded-lg hover:bg-footerSocialHover cursor-pointer sm:p3"
                     >
                       <img
                         className={socialMedia.size}
@@ -278,7 +278,7 @@ const Footer = ({ variant }) => {
                       initial="initial"
                       animate="animate"
                       whileHover="whileHover"
-                      className="bg-[#fff] p-2 rounded-lg  sm:p3"
+                      className="bg-[#fff] p-2 rounded-lg  cursor-pointer sm:p3"
                     >
                       <img
                         className={socialMedia.size}
