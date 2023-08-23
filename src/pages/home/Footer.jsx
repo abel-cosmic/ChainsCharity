@@ -208,7 +208,8 @@ const Footer = ({ variant }) => {
           </motion.h1>
           <motion.ul variants={linkers} className="flex flex-col gap-2 ">
             {linkPack2.map((item) => (
-              <motion.li variants={linkers} whileHover="whileHover">
+              <motion.li variants={linkers}  initial="initial"
+        animate="animate" whileHover="whileHover">
                 <Link
                   to={item.link}
                   className={`hover:underline   flex text-xs ${
